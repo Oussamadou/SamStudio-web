@@ -1,0 +1,2214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SamStudio | Global Creative & Digital Excellence — From Turkey to the World</title>
+  
+  <!-- SEO & Social OpenGraph Meta Tags -->
+  <meta name="description" content="SamStudio is a world-class hybrid digital agency and Turkish B2B industrial export partner delivering high-converting Next.js web applications, AI visual synthesis, and multilingual export presentation kits across EN, FR, AR, TR." />
+  <meta name="keywords" content="SamStudio, Turkish B2B Export, Next.js Web Agency, AI Visual Synthesis, Midjourney, Istanbul Creative Studio, Multilingual Agency, Motion Ads" />
+  <meta property="og:title" content="SamStudio | Global Creative & Digital Excellence" />
+  <meta property="og:description" content="Connecting Turkish industrial power to global markets with design precision, high-converting Next.js apps, and AI visual synthesis." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Typography Stacks: Plus Jakarta Sans, Inter, Cairo (Arabic), JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#09090B',
+            'zinc-dark': '#121215',
+            'zinc-card': '#18181B',
+            'zinc-elevated': '#242429',
+            'accent-violet': '#6366F1',
+            'accent-violet-glow': '#818CF8',
+            'accent-gold': '#D4AF37',
+            'accent-gold-light': '#E5C158',
+            'accent-cyan': '#06B6D4',
+            'accent-emerald': '#10B981',
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            arabic: ['Cairo', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'glow-violet': '0 0 35px -5px rgba(99, 102, 241, 0.35)',
+            'glow-gold': '0 0 35px -5px rgba(229, 193, 88, 0.3)',
+            'glow-cyan': '0 0 35px -5px rgba(6, 182, 212, 0.3)',
+          },
+          animation: {
+            'marquee': 'marquee 25s linear infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- CSS Custom Properties & Awwwards Physics Styling -->
+  <style>
+    :root {
+      --ease-awwwards: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    body {
+      background-color: #09090B;
+      color: #FAFAFA;
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    html[dir="rtl"] body {
+      font-family: 'Cairo', sans-serif;
+    }
+    
+    /* Awwwards Glassmorphism Design Tokens */
+    .glass-card {
+      background: rgba(24, 24, 27, 0.65);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      transition: all 0.4s var(--ease-awwwards);
+    }
+    .glass-card:hover {
+      border-color: rgba(99, 102, 241, 0.35);
+      box-shadow: 0 0 35px -5px rgba(99, 102, 241, 0.25);
+      transform: translateY(-4px);
+    }
+    .glass-card-gold:hover {
+      border-color: rgba(229, 193, 88, 0.4);
+      box-shadow: 0 0 35px -5px rgba(229, 193, 88, 0.25);
+    }
+    .bg-grid-pattern {
+      background-size: 48px 48px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    .text-gradient-gold {
+      background: linear-gradient(135deg, #FFFFFF 0%, #E5C158 50%, #D4AF37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-gradient-violet {
+      background: linear-gradient(135deg, #FFFFFF 0%, #818CF8 50%, #6366F1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    /* Interactive Button Magnetic Glows */
+    .btn-gold-glow {
+      background: linear-gradient(135deg, #E5C158 0%, #D4AF37 100%);
+      box-shadow: 0 0 25px rgba(229, 193, 88, 0.35);
+      transition: all 0.3s var(--ease-awwwards);
+    }
+    .btn-gold-glow:hover {
+      box-shadow: 0 0 40px rgba(229, 193, 88, 0.55);
+      transform: scale(1.03);
+    }
+    
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #09090B;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #242429;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #6366F1;
+    }
+  </style>
+
+  <!-- React 18, ReactDOM, and Babel -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="selection:bg-accent-violet selection:text-white">
+
+  <div id="root"></div>
+
+  <!-- React Application Logic -->
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    // --- Master Multilingual Copy Matrix (EN | FR | AR | TR) ---
+    const i18n = {
+      EN: {
+        dir: 'ltr',
+        navServices: 'Services',
+        navPortfolio: 'Work Showcase',
+        navTeam: 'Studio & AI Engine',
+        navCatalog: 'B2B Sourcing',
+        navPitch: 'Pitch Deck',
+        navContact: 'Contact Us',
+        heroBadge: 'HYBRID AGENCY • TURKEY TO THE WORLD',
+        heroTitle1: 'Global Creative &',
+        heroTitle2: 'Digital Excellence',
+        heroSub: 'High-converting Next.js web design, performance video ads, and localized B2B export solutions driven by AI visual synthesis and design precision.',
+        ctaPrimary: 'Schedule Strategy Call',
+        ctaSecondary: 'Explore Pitch Deck',
+        ctaCatalog: 'View B2B Catalogs',
+        stats1Value: '4 Languages',
+        stats1Label: 'EN • FR • AR • TR Native',
+        stats2Value: '24 Hours',
+        stats2Label: 'AI Visual Turnaround',
+        stats3Value: '100%',
+        stats3Label: 'RTL Symmetry & Next.js',
+        stats4Value: 'B2B Sourcing',
+        stats4Label: 'Direct Turkish Export',
+        servicesTitle: 'World-Class Agency Services',
+        servicesSub: 'Engineered for high conversion, brand luxury, and international expansion.',
+        portfolioTitle: 'Work & Quality Showcase',
+        portfolioSub: 'Explore real-world inspired UI/UX applications, AI product visual campaigns, and performance media creatives.',
+        tabAll: 'All Works',
+        tabWeb: 'Web & Next.js Apps',
+        tabVideo: 'Motion & Meta Ads',
+        tabAi: 'AI Visual Synthesis',
+        tabB2b: 'B2B Export Kits',
+        teamBadge: 'STUDIO ARCHITECTURE & AI VISUAL ENGINE',
+        teamTitle: 'The Studio & AI Visual Engine',
+        teamSub: 'Human craftsmanship augmented by state-of-the-art synthetic visual pipelines.',
+        workflowTitle: 'Our 4-Stage Human + AI Pipeline',
+        workflowSub: 'How we achieve 10x production speed while elevating luxury standards.',
+        promptBoxTitle: 'Interactive AI Production Prompt Lab',
+        promptBoxDesc: 'Explore and test the exact prompt architectures powering our client deliverables.',
+        copiedText: 'Prompt Copied to Clipboard!',
+        copyPromptBtn: 'Copy Production Prompt',
+        liveStudioBadge: 'Istanbul HQ • Live Studio Operations',
+        activeMembersTitle: 'Core Multidisciplinary Specialists',
+        catalogBadge: 'TURKISH INDUSTRIAL EXPORT GATEWAY',
+        catalogTitle: 'Multilingual Turkish Supplier Catalogs',
+        catalogSub: 'Unlocking Turkey’s industrial manufacturing strength with instant 4-language buyer presentation kits and live RFQ quotes.',
+        catalogMoq: 'MOQ',
+        catalogLead: 'Lead Time',
+        catalogPort: 'Export Port',
+        catalogFob: 'Est. FOB Price',
+        catalogInspect: 'View Technical Specs',
+        catalogRfq: 'Request Export Quote',
+        rfqModalTitle: 'B2B Export RFQ & Quotation Engine',
+        rfqProduct: 'Target Product',
+        rfqQuantity: 'Order Quantity (Units)',
+        rfqCountry: 'Destination Market / Country',
+        rfqNotes: 'Customization & Logistics Specifications',
+        rfqSubmit: 'Dispatch Official RFQ Request',
+        rfqSuccess: 'RFQ Dispatched! A dedicated Turkish export director has been assigned.',
+        pitchDeckTitle: '12-Slide Interactive Pitch Deck',
+        pitchDeckSub: 'Explore our agency strategy, ROI models, and global reach.',
+        closeBtn: 'Close',
+        viewDeckBtn: 'Open Pitch Deck',
+        activeLang: 'EN',
+        taglineFooter: 'Connecting Turkish industrial power to global markets with design precision.',
+        tickerItems: [
+          'NEXT.JS WEB ARCHITECTURE',
+          'HIGH-CONVERTING META ADS',
+          'TURKISH B2B SUPPLIER SOURCING',
+          'AI VISUAL SYNTHESIS ENGINE',
+          'MULTILINGUAL EN | FR | AR | TR',
+          'MOTION GRAPHICS & KINETIC TYPOGRAPHY'
+        ]
+      },
+      FR: {
+        dir: 'ltr',
+        navServices: 'Services',
+        navPortfolio: 'Réalisations',
+        navTeam: 'Studio & Moteur IA',
+        navCatalog: 'Sourcing B2B',
+        navPitch: 'Présentation',
+        navContact: 'Contactez-nous',
+        heroBadge: 'AGENCE HYBRIDE • DE LA TURQUIE AU MONDE',
+        heroTitle1: 'Excellence Créative &',
+        heroTitle2: 'Numérique Mondiale',
+        heroSub: 'Conception web Next.js haut de gamme, montage vidéo performance et solutions B2B multilingues pour le marché international.',
+        ctaPrimary: 'Planifier un Appel Stratégique',
+        ctaSecondary: 'Explorer la Présentation',
+        ctaCatalog: 'Voir Catalogues B2B',
+        stats1Value: '4 Langues',
+        stats1Label: 'EN • FR • AR • TR Intégré',
+        stats2Value: '24 Heures',
+        stats2Label: 'Rendu Visuel par IA',
+        stats3Value: '100%',
+        stats3Label: 'Symétrie RTL & Vitesse',
+        stats4Value: 'Sourcing B2B',
+        stats4Label: 'Exportation Directe Turque',
+        servicesTitle: 'Nos Services d\'Élite',
+        servicesSub: 'Conçus pour une conversion maximale et l\'expansion internationale.',
+        portfolioTitle: 'Galerie de Projets & Qualité',
+        portfolioSub: 'Découvrez nos designs UI/UX haut de gamme, visuels IA et créations vidéo haute conversion.',
+        tabAll: 'Tous les Projets',
+        tabWeb: 'Apps & Web Next.js',
+        tabVideo: 'Motion & Ads Meta',
+        tabAi: 'Synthèse Visuelle IA',
+        tabB2b: 'Kits d\'Export B2B',
+        teamBadge: 'ARCHITECTURE STUDIO & MOTEUR IA',
+        teamTitle: 'Le Studio & Moteur Visuel IA',
+        teamSub: 'Le savoir-faire humain amplifié par les meilleurs pipelines de génération synthétique.',
+        workflowTitle: 'Notre Pipeline Hybride Humain + IA',
+        workflowSub: 'Comment nous combinons vitesse x10 et standards de luxe sans compromis.',
+        promptBoxTitle: 'Laboratoire de Prompts IA Interactif',
+        promptBoxDesc: 'Découvrez et copiez les structures de prompts précises qui génèrent nos visuels.',
+        copiedText: 'Prompt Copié dans le Presse-papier !',
+        copyPromptBtn: 'Copier le Prompt de Production',
+        liveStudioBadge: 'QG Istanbul • Opérations en Direct',
+        activeMembersTitle: 'Spécialistes Clés du Studio',
+        catalogBadge: 'PORTAIL D\'EXPORTATION INDUSTRIELLE TURQUE',
+        catalogTitle: 'Catalogues d\'Exportation B2B Turcs',
+        catalogSub: 'Connexion directe avec les grands fabricants turcs avec kits de présentation en 4 langues et devis RFQ instantanés.',
+        catalogMoq: 'Quantité Min (MOQ)',
+        catalogLead: 'Délai de Livraison',
+        catalogPort: 'Port d\'Exportation',
+        catalogFob: 'Prix FOB Estimé',
+        catalogInspect: 'Spécifications Techniques',
+        catalogRfq: 'Demander un Devis RFQ',
+        rfqModalTitle: 'Moteur de Devis & RFQ B2B Export',
+        rfqProduct: 'Produit Cible',
+        rfqQuantity: 'Quantité Souhaitée (Unités)',
+        rfqCountry: 'Marché / Pays de Destination',
+        rfqNotes: 'Spécifications & Emballage',
+        rfqSubmit: 'Envoyer la Demande Officielle RFQ',
+        rfqSuccess: 'Demande RFQ transmise ! Un responsable export vous contacte sous 4h.',
+        pitchDeckTitle: 'Présentation Interactive (12 Slides)',
+        pitchDeckSub: 'Découvrez notre modèle stratégique et notre portée internationale.',
+        closeBtn: 'Fermer',
+        viewDeckBtn: 'Voir la Présentation',
+        activeLang: 'FR',
+        taglineFooter: 'Relier l\'industrie turque aux marchés mondiaux avec précision.',
+        tickerItems: [
+          'ARCHITECTURE WEB NEXT.JS',
+          'ADS META À HAUTE CONVERSION',
+          'SOURCING FOURNISSEURS TURCS',
+          'SYNTHÈSE VISUELLE PAR IA',
+          'MULTILINGUE EN | FR | AR | TR',
+          'MOTION DESIGN & TYPOGRAPHIE'
+        ]
+      },
+      AR: {
+        dir: 'rtl',
+        navServices: 'الخدمات',
+        navPortfolio: 'معرض الأعمال',
+        navTeam: 'الاستوديو والذكاء الاصطناعي',
+        navCatalog: 'التوريد B2B',
+        navPitch: 'العرض التقديمي',
+        navContact: 'اتصل بنا',
+        heroBadge: 'وكالة هجينة عالمية • من تركيا إلى العالم',
+        heroTitle1: 'التميز الإبداعي و',
+        heroTitle2: 'الرقمي العالمي',
+        heroSub: 'تصميم مواقع فاخرة بتقنية Next.js، إعلانات فيديو عالية التحويل، وحلول تصدير متعددة اللغات تربط الشركات بالأسواق العالمية.',
+        ctaPrimary: 'حجز مكالمة استراتيجية',
+        ctaSecondary: 'العرض التقديمي',
+        ctaCatalog: 'استكشاف الكتالوجات',
+        stats1Value: '4 لغات',
+        stats1Label: 'EN • FR • AR • TR أصلي',
+        stats2Value: '24 ساعة',
+        stats2Label: 'سرعة الإنجاز بالذكاء الاصطناعي',
+        stats3Value: '100%',
+        stats3Label: 'دعم كامل للكتابة العربية RTL',
+        stats4Value: 'توريد B2B',
+        stats4Label: 'تصدير مباشر من تركيا',
+        servicesTitle: 'خدماتنا الاحترافية',
+        servicesSub: 'مصممة لتحقيق أعلى معدلات التحويل والنمو في الأسواق الدولية.',
+        portfolioTitle: 'معرض الجودة والأعمال',
+        portfolioSub: 'استكشف نماذج واجهات الاستخدام المتقدمة، حملات الصور بالذكاء الاصطناعي، والإعلانات عالية التحويل.',
+        tabAll: 'جميع الأعمال',
+        tabWeb: 'مواقع وتطبيقات Next.js',
+        tabVideo: 'الفيديو وإعلانات ميتا',
+        tabAi: 'التوليد البصري بالذكاء الاصطناعي',
+        tabB2b: 'كتالوجات التصدير B2B',
+        teamBadge: 'معمارية الاستوديو ومحرك الذكاء الاصطناعي',
+        teamTitle: 'فريق الاستوديو ومحرك التوليد البصري',
+        teamSub: 'الإبداع والخبرة البشرية المدعومة بأقوى تقنيات توليد الصور والفيديو بالذكاء الاصطناعي.',
+        workflowTitle: 'منهجية العمل الهجينة: الإنسان + الذكاء الاصطناعي',
+        workflowSub: 'كيف نضاعف سرعة الإنتاج 10 مرات مع الحفاظ على أعلى معايير الفخامة.',
+        promptBoxTitle: 'مختبر مطالبات الذكاء الاصطناعي التفاعلي',
+        promptBoxDesc: 'استكشف وانسخ بنية المطالبات الاحترافية المعتمدة في إنتاج مشاريعنا.',
+        copiedText: 'تم نسخ الأمر بنجاح!',
+        copyPromptBtn: 'نسخ أمر الذكاء الاصطناعي',
+        liveStudioBadge: 'مقر إسطنبول • الاستوديو المباشر',
+        activeMembersTitle: 'نخبة الخبراء والمتخصصين',
+        catalogBadge: 'بوابة التصدير الصناعي التركي B2B',
+        catalogTitle: 'كتالوجات التصدير التركية B2B',
+        catalogSub: 'ربط مباشر مع كبرى المصانع التركية عبر عروض تقديمية بـ 4 لغات ومحرك طلب عروض الأسعار RFQ الفوري.',
+        catalogMoq: 'الحد الأدنى للطلب (MOQ)',
+        catalogLead: 'مدة التجهيز والشحن',
+        catalogPort: 'ميناء التصدير',
+        catalogFob: 'السعر التقديري FOB',
+        catalogInspect: 'المواصفات الفنية والشهادات',
+        catalogRfq: 'طلب عرض سعر مباشر',
+        rfqModalTitle: 'محرك عروض أسعار التصدير RFQ',
+        rfqProduct: 'المنتج المستهدف',
+        rfqQuantity: 'الكمية المطلوبة (بالوحدة)',
+        rfqCountry: 'سوق / دولة الوصول',
+        rfqNotes: 'مواصفات التخصيص والتغليف',
+        rfqSubmit: 'إرسال طلب التسعير الرسمي RFQ',
+        rfqSuccess: 'تم إرسال طلب RFQ بنجاح! تم تعيين مسؤول تصدير خاص لمتابعة طلبك.',
+        pitchDeckTitle: 'العرض التقديمي التفاعلي (12 شريحة)',
+        pitchDeckSub: 'استكشف استراتيجيتنا ونموذج القيمة المضافة.',
+        closeBtn: 'إغلاق',
+        viewDeckBtn: 'فتح العرض التقديمي',
+        activeLang: 'AR',
+        taglineFooter: 'ربط الصناعة التركية بالأسواق العالمية بدقة وتصميم فاخر.',
+        tickerItems: [
+          'معمارية المواقع بتقنية NEXT.JS',
+          'إعلانات META عالية التحويل',
+          'توريد الموردين من تركيا B2B',
+          'محرك التوليد البصري بالذكاء الاصطناعي',
+          'دعم متعدد اللغات EN | FR | AR | TR',
+          'المونتاج ورسوم الحركة الكينتيكية'
+        ]
+      },
+      TR: {
+        dir: 'ltr',
+        navServices: 'Hizmetler',
+        navPortfolio: 'Portfolyo',
+        navTeam: 'Stüdyo & AI Motoru',
+        navCatalog: 'İhracat B2B',
+        navPitch: 'Sunum Dosyası',
+        navContact: 'İletişim',
+        heroBadge: 'HİBRİT AJANS • TÜRKİYE\'DEN DÜNYAYA',
+        heroTitle1: 'Küresel Yaratıcı ve',
+        heroTitle2: 'Dijital Mükemmellik',
+        heroSub: 'Yüksek dönüşümlü Next.js web mimarisi, Meta performans reklamları, AI görsel üretimi ve küresel B2B ihracat çözümleri.',
+        ctaPrimary: '15 Dk Strateji Randevusu',
+        ctaSecondary: 'Ajans Sunum Dosyası',
+        ctaCatalog: 'B2B İhracat Kataloğu',
+        stats1Value: '4 Dil',
+        stats1Label: 'EN • FR • AR • TR Entegre',
+        stats2Value: '24 Saat',
+        stats2Label: 'Yapay Zeka Görsel Üretim',
+        stats3Value: '%100',
+        stats3Label: 'RTL Uyumlu & Hızlı UX',
+        stats4Value: 'B2B Tedarik',
+        stats4Label: 'Doğrudan Türk İhracatı',
+        servicesTitle: 'Dünya Standartlarında Hizmetler',
+        servicesSub: 'Uluslararası ölçeklenme ve yüksek dönüşüm için tasarlanmış ajans çözümleri.',
+        portfolioTitle: 'Çalışma & Kalite Portfolyosu',
+        portfolioSub: 'Yüksek dönüşüm odaklı UI/UX web tasarımları, AI ürün reklamları ve performans odaklı video kurgularımızı inceleyin.',
+        tabAll: 'Tüm Çalışmalar',
+        tabWeb: 'Web & Next.js Uygulamaları',
+        tabVideo: 'Motion & Meta Ads',
+        tabAi: 'Yapay Zeka Tasarım Engine',
+        tabB2b: 'B2B İhracat Kitleri',
+        teamBadge: 'STÜDYO MİMARİSİ VE YAPAY ZEKA MOTORU',
+        teamTitle: 'Stüdyo Ekibi ve Yapay Zeka Motoru',
+        teamSub: 'İleri düzey görsel üretim sistemleriyle güçlendirilmiş usta insan yaratıcılığı.',
+        workflowTitle: '4 Aşamalı İnsan + Yapay Zeka Sürecimiz',
+        workflowSub: 'Lüks standartlardan ödün vermeden 10 kat hızlı üretim nasıl sağlanır?',
+        promptBoxTitle: 'Etkileşimli Yapay Zeka İstem Laboratuvarı',
+        promptBoxDesc: 'Müşteri projelerimizde kullandığımız gerçek istem mimarilerini inceleyin ve kopyalayın.',
+        copiedText: 'İstem Panoya Kopyalandı!',
+        copyPromptBtn: 'Üretim İstemini Kopyala',
+        liveStudioBadge: 'İstanbul Merkez • Canlı Stüdyo',
+        activeMembersTitle: 'Çekirdek Uzman Kadromuz',
+        catalogBadge: 'TÜRKİYE B2B SANAYİ VE İHRACAT PORTALI',
+        catalogTitle: 'Türkiye B2B İhracat Kataloğu',
+        catalogSub: 'Türk üreticilerini küresel alıcılarla buluşturan 4 dilde dijital ürün tanıtım kitleri ve anlık RFQ fiyatlama motoru.',
+        catalogMoq: 'Min. Sipariş (MOQ)',
+        catalogLead: 'Teslimat Süresi',
+        catalogPort: 'Çıkış Limanı',
+        catalogFob: 'Tahmini FOB Fiyat',
+        catalogInspect: 'Teknik Özellikleri İncele',
+        catalogRfq: 'İhracat Teklifi İste (RFQ)',
+        rfqModalTitle: 'B2B İhracat RFQ ve Fiyatlandırma Motoru',
+        rfqProduct: 'Seçili Ürün',
+        rfqQuantity: 'Talep Edilen Adet',
+        rfqCountry: 'Hedef Pazar / Ülke',
+        rfqNotes: 'Özelleştirme & Lojistik Detayları',
+        rfqSubmit: 'Resmi RFQ Talebini Gönder',
+        rfqSuccess: 'RFQ iletildi! Özel ihracat temsilcimiz 4 saat içinde sizinle iletişime geçecektir.',
+        pitchDeckTitle: 'Etkileşimli Ajans Sunumu (12 Slayt)',
+        pitchDeckSub: '12 slaytlık ajans mimarimizi ve iş modelimizi inceleyin.',
+        closeBtn: 'Kapat',
+        viewDeckBtn: 'Sunumu İncele',
+        activeLang: 'TR',
+        taglineFooter: 'Türkiye\'nin üretim gücünü estetik ve teknolojiyle dünyaya taşıyoruz.',
+        tickerItems: [
+          'NEXT.JS WEB MİMARİSİ',
+          'YÜKSEK DÖNÜŞÜMLÜ META ADS',
+          'TÜRKİYE B2B TEDARİK BRİCİ',
+          'YAPAY ZEKA GÖRSEL MOTORU',
+          'ÇOK DİLLİ EN | FR | AR | TR',
+          'MOTION GRAPHICS & KİNETİK DİZAYN'
+        ]
+      }
+    };
+
+    // --- Services Matrix Data ---
+    const servicesData = [
+      {
+        id: 'graphic',
+        icon: '🎨',
+        title: { EN: 'Graphic & Brand Identity', FR: 'Identité Visuelle & Branding', AR: 'الهوية البصرية والعلامة التجارية', TR: 'Grafik Tasarım & Marka Kimliği' },
+        desc: { EN: 'Luxury visual systems, pitch decks, brand guidelines, and vector iconography tailored for global recognition.', FR: 'Systèmes visuels de luxe, présentations, chartes graphiques et iconographie sur mesure.', AR: 'أنظمة بصرية فاخرة، عروض تقديمية، وأدلة علامات تجارية مصممة للتوسع العالمي.', TR: 'Küresel prestij için tasarlanmış lüks görsel sistemler, sunum dosyaları ve marka rehberleri.' },
+        badge: 'Design System',
+        color: 'from-amber-500/20 to-amber-500/5',
+        border: 'border-amber-500/30',
+        glow: 'text-amber-400'
+      },
+      {
+        id: 'video',
+        icon: '🎬',
+        title: { EN: 'Video Editing & Motion Ads', FR: 'Montage Vidéo & Motion Ads', AR: 'المونتاج وإعلانات الحركة', TR: 'Video Kurgu & Motion Ads' },
+        desc: { EN: 'Kinetic typography, fast-paced promo video edits, and AI video ad loops optimized for Meta & TikTok conversions.', FR: 'Typographie cinétique, promos dynamiques et boucles vidéo IA optimisées pour Meta et TikTok.', AR: 'فيديوهات ترويجية سريعة الإيقاع وإعلانات حركة مدعومة بالذكاء الاصطناعي مخصصة للتحويل.', TR: 'Meta ve TikTok dönüşümleri için optimize edilmiş kinetik tipografi ve AI video reklamlar.' },
+        badge: 'High Conversion',
+        color: 'from-cyan-500/20 to-cyan-500/5',
+        border: 'border-cyan-500/30',
+        glow: 'text-cyan-400'
+      },
+      {
+        id: 'web',
+        icon: '💻',
+        title: { EN: 'Web Design & Next.js Apps', FR: 'Conception Web & App Next.js', AR: 'تصميم المواقع وتطبيقات Next.js', TR: 'Web Tasarım & Next.js Uygulamaları' },
+        desc: { EN: 'Smooth scroll animations, dark-mode glassmorphism, responsive UX physics, and multi-language structural speed.', FR: 'Animations fluides, glassmorphisme sombre, physique UX réactive et vitesse multilingue.', AR: 'تأثيرات التمرير السلس، واجهات زجاجية مظلمة، وسرعة فائقة متعددة اللغات.', TR: 'Pürüzsüz kaydırma efektleri, karanlık mod glassmorphism ve çok dilli hızlı web mimarisi.' },
+        badge: 'Next.js & Tailwind',
+        color: 'from-indigo-500/20 to-indigo-500/5',
+        border: 'border-indigo-500/30',
+        glow: 'text-indigo-400'
+      },
+      {
+        id: 'meta',
+        icon: '📈',
+        title: { EN: 'Meta Ads & Social Management', FR: 'Meta Ads & Gestion Sociale', AR: 'إعلانات ميتا وإدارة التواصل', TR: 'Sosyal Medya & Meta Ads' },
+        desc: { EN: 'Multi-platform grid strategy (IG, FB, LI), conversion funnel structure, copy localized for EN, FR, AR, TR.', FR: 'Stratégie de grille multi-plateforme, entonnoirs de conversion et rédaction localisée.', AR: 'إستراتيجية شبكات التواصل الاجتماعي (إنستغرام، لينكدإن)، وإعلانات موجهة بدقة.', TR: 'Çoklu platform akış stratejisi (IG, FB, LI), dönüşüm hunileri ve 4 dilde reklam metinleri.' },
+        badge: 'Growth Engine',
+        color: 'from-emerald-500/20 to-emerald-500/5',
+        border: 'border-emerald-500/30',
+        glow: 'text-emerald-400'
+      },
+      {
+        id: 'b2b',
+        icon: '🚢',
+        title: { EN: 'Multilingual Turkish Sourcing', FR: 'Sourcing Fournisseurs Turcs', AR: 'التوريد والموردين من تركيا', TR: 'Çok Dilli İhracat & Tedarik' },
+        desc: { EN: 'Connecting international buyers with premium Turkish manufacturers through digital sales catalogs and RFQ decks.', FR: 'Connecter les acheteurs internationaux aux fabricants turcs avec des catalogues digitaux.', AR: 'ربط المشترين الدوليين بكبار المصنعين في تركيا عبر كتالوجات رقمية متقدمة.', TR: 'Küresel alıcıları Türk üreticilerle buluşturan 4 dilli dijital kataloglar ve ihracat paketleri.' },
+        badge: 'Export Bridge',
+        color: 'from-amber-400/20 to-amber-600/5',
+        border: 'border-amber-400/30',
+        glow: 'text-amber-400'
+      },
+      {
+        id: 'ai',
+        icon: '⚡',
+        title: { EN: 'AI Visual Synthesis Engine', FR: 'Moteur de Synthèse Visuelle IA', AR: 'محرك التوليد البصري بالذكاء الاصطناعي', TR: 'Yapay Zeka İçerik Üretimi' },
+        desc: { EN: 'Midjourney v6, Flux.1, and Luma prompt pipelines producing realistic studio, team, and product marketing assets.', FR: 'Pipelines de prompts Midjourney, Flux et Luma produisant des visuels marketing hyperréalistes.', AR: 'إنتاج صور ومقاطع فيديو عالية الوقع للعلامات التجارية باستخدام أفضل أدوات الذكاء الاصطناعي.', TR: 'Midjourney, Flux ve Luma ile hiper-gerçekçi ürün, stüdyo ve pazarlama görselleri üretimi.' },
+        badge: 'Flux & Midjourney',
+        color: 'from-purple-500/20 to-purple-500/5',
+        border: 'border-purple-500/30',
+        glow: 'text-purple-400'
+      }
+    ];
+
+    // --- Phase 5: Work Showcase & Portfolio Items Data ---
+    const portfolioItems = [
+      {
+        id: 'p1',
+        category: 'web',
+        title: { EN: 'Aetheria Dark-Mode SaaS Platform', FR: 'Plateforme SaaS Sombre Aetheria', AR: 'منصة ساعد البرمجية المظلمة', TR: 'Aetheria Karanlık Mod SaaS Platformu' },
+        desc: { EN: 'Next.js 15, Framer Motion, and Tailwind dashboard engineered for high conversion rates and instantaneous load speeds.', FR: 'Tableau de bord Next.js 15 et Framer Motion conçu pour une conversion maximale.', AR: 'واجهة استخدام مخصصة للشركات ذات الأداء العالي ومعدلات تحويل فائقة.', TR: 'Yüksek dönüşüm ve anlık yükleme hızları için geliştirilmiş Next.js 15 SaaS paneli.' },
+        tag: 'Next.js & Tailwind',
+        metrics: '+184% Conversion',
+        img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'p2',
+        category: 'video',
+        title: { EN: 'Kinetic Meta Ad Reel Engine', FR: 'Moteur de Reels Publicitaires Meta', AR: 'محرك الإعلانات الحركية لميتا', TR: 'Kinetik Meta Ads Video Reel' },
+        desc: { EN: 'High-energy typography overlays, speed ramps, and AI subtitle generation optimized for 9:16 vertical TikTok/IG feeds.', FR: 'Séquences dynamiques et typographie cinétique optimisées pour les flux 9:16.', AR: 'إعلانات فيديو سريعة مع نصوص حركة ونصوص توضيحية بذكاء اصطناعي.', TR: 'TikTok ve IG akışları için optimize edilmiş yüksek tempolu kinetik tipografi ve AI altyazı.' },
+        tag: 'Motion & Meta Ads',
+        metrics: '3.4x ROAS Yield',
+        img: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'p3',
+        category: 'ai',
+        title: { EN: 'Luxury Packaging Photorealistic Render', FR: 'Rendu Photoréaliste d\'Emballage Luxe', AR: 'تغليف فاخر متولد بالذكاء الاصطناعي', TR: 'Lüks Ambalaj Yapay Zeka Render' },
+        desc: { EN: 'Generated using Midjourney v6 & Flux.1 pipelines with gold foil stamping physics and macro studio light setup.', FR: 'Généré avec Midjourney v6 pour un rendu d\'emballage haut de gamme.', AR: 'توليد صوري بدقة فائقة وإضاءة استوديو ثلاثية الأبعاد باستخدام أفضل المحركات.', TR: 'Midjourney v6 ve Flux.1 ile üretilmiş altın varak baskılı studio kalite ambalaj görseli.' },
+        tag: 'Midjourney v6 & Flux.1',
+        metrics: '24h Delivery',
+        img: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'p4',
+        category: 'b2b',
+        title: { EN: 'Turkish Industrial Machinery Catalog', FR: 'Catalogue Machinerie Industrielle Turque', AR: 'كتالوج الآلات الصناعية التركية', TR: 'Türk Sanayi Makine İhracat Kataloğu' },
+        desc: { EN: '4-Language interactive PDF & web presentation kit connecting Bursa CNC factory lines directly to European buyers.', FR: 'Kit B2B en 4 langues connectant les usines turques aux acheteurs européens.', AR: 'كتالوج تفاعلي بـ 4 لغات لربط مصانع الآلات التركية بالمشترين في أوروبا والخليج.', TR: 'Bursa sanayi üreticilerini Avrupa ve Körfez alıcılarıyla buluşturan 4 dilli dijital katalog.' },
+        tag: 'B2B Sourcing Bridge',
+        metrics: '$1.2M RFQ Volume',
+        img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'p5',
+        category: 'web',
+        title: { EN: 'Lumière Organic E-Commerce Store', FR: 'Boutique E-Commerce Bio Lumière', AR: 'متجر لوميير الإلكتروني العضوي', TR: 'Lumière Organik E-Ticaret Web Sitesi' },
+        desc: { EN: 'Glassmorphic responsive checkout UX with dynamic multi-currency display and localized Arabic/English support.', FR: 'UX de paiement réactif avec prise en charge multidevises et bilingue.', AR: 'تجربة تسوق سلسة مع تحويل فوري للعملات وتصميم متناسق بالكامل.', TR: 'Çoklu para birimi ve Türkçe/İngilizce dil desteği olan glassmorphism e-ticaret arayüzü.' },
+        tag: 'E-Commerce UX',
+        metrics: '0.4s Page Load',
+        img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 'p6',
+        category: 'ai',
+        title: { EN: 'Synthetic Apparel Brand Campaign', FR: 'Campagne de Marque de Mode Synthétique', AR: 'حملة أزياء مصممة بالذكاء الاصطناعي', TR: 'Yapay Zeka Hazır Giyim Kampanyası' },
+        desc: { EN: 'Full studio campaign photography created without physical models or location shoots using Luma & Midjourney.', FR: 'Campagne complète créée sans modèles physiques grâce à la synthèse visuelle IA.', AR: 'إنتاج بصرية كامل للعلامة التجارية بدون مصورين أو عارضين أزياء بفضل الذكاء الاصطناعي.', TR: 'Fiziksel stüdyo ve manken kullanmadan Luma ve Midjourney ile üretilmiş tekstil kampanyası.' },
+        tag: 'AI Brand Synthetic',
+        metrics: '-80% Asset Cost',
+        img: 'https://images.unsplash.com/photo-1528458909336-e7a0adfac005?auto=format&fit=crop&w=800&q=80'
+      }
+    ];
+
+    // --- Phase 6: Multidisciplinary Studio Team Data ---
+    const teamMembersData = [
+      {
+        id: 'kaan',
+        name: 'Kaan Demir',
+        role: { EN: 'Executive Creative Director', FR: 'Directeur Artistique Exécutif', AR: 'المدير الإبداعي التنفيذي', TR: 'Kreatif Direktör' },
+        bio: {
+          EN: '10+ years shaping luxury brand architectures, dark-mode design systems, and award-winning international campaigns.',
+          FR: 'Plus de 10 ans d\'expérience dans le design de marques de luxe et les systèmes de design primés.',
+          AR: 'أكثر من 10 سنوات في صياغة أنظمة الهوية البصرية الفاخرة للعلامات التجارية العالمية.',
+          TR: 'Lüks marka mimarileri, karanlık mod tasarım sistemleri ve uluslararası ödüllü kampanyalarda 10+ yıl deneyim.'
+        },
+        tools: ['Midjourney v6', 'Figma Luxury', 'Art Direction'],
+        status: { EN: 'Directing Visual Strategy', FR: 'Direction Stratégie Visuelle', AR: 'توجيه الاستراتيجية البصرية', TR: 'Görsel Stratejiyi Yönetiyor' },
+        avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        id: 'zeynep',
+        name: 'Zeynep Kaya',
+        role: { EN: 'Lead Full-Stack Web Architect', FR: 'Architecte Web Full-Stack', AR: 'كبير مهندسي معمارية الويب', TR: 'Kıdemli Web Mimarı' },
+        bio: {
+          EN: 'Specializes in high-performance Next.js 15 applications, 60fps UX physics, and seamless RTL multilingual symmetry.',
+          FR: 'Spécialiste Next.js 15, physique d\'animation fluide et intégration multilingue RTL.',
+          AR: 'متخصصة في تطبيقات Next.js فائقة السرعة، وتناسق واجهات RTL للمستخدمين العرب.',
+          TR: 'Yüksek performanslı Next.js 15 web uygulamaları, pürüzsüz UX fizikleri ve çok dilli RTL mimarisi uzmanı.'
+        },
+        tools: ['Next.js 15', 'Tailwind', 'Cloudflare Edge'],
+        status: { EN: 'Optimizing Edge Routing', FR: 'Optimisation Routage Edge', AR: 'تحسين أداء خوادم Edge', TR: 'Edge Yönlendirmesini Optimize Ediyor' },
+        avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        id: 'emre',
+        name: 'Emre Yıldız',
+        role: { EN: 'Head of Motion & AI Video Reels', FR: 'Chef Motion & Vidéo IA', AR: 'رئيس قسم المونتاج وإعلانات الفيديو', TR: 'Motion & AI Video Yönetmeni' },
+        bio: {
+          EN: 'Pioneering kinetic typography, AI video synthesis with Luma/Runway, and high-ROAS Meta & TikTok ad formats.',
+          FR: 'Pionnier de la typographie cinétique, génération vidéo IA et formats publicitaires Meta/TikTok à fort ROAS.',
+          AR: 'رائد في المونتاج الحركي، وتوليد الفيديوهات الترويجية بالذكاء الاصطناعي لحملات ميتا وتيك توك.',
+          TR: 'Kinetik tipografi, Runway/Luma ile AI video üretimi ve yüksek ROAS getiren Meta/TikTok reklamları uzmanı.'
+        },
+        tools: ['Runway Gen-3', 'Luma', 'After Effects'],
+        status: { EN: 'Rendering 9:16 Video Reel', FR: 'Rendu Reel Vidéo 9:16', AR: 'توليد إعلان فيديو 9:16', TR: '9:16 Video Reel Render Alıyor' },
+        avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'
+      },
+      {
+        id: 'tarek',
+        name: 'Tarek Al-Mansoor',
+        role: { EN: 'Director of B2B Export & Sourcing', FR: 'Directeur Export B2B & Sourcing', AR: 'مدير التوريد والتصدير الدولي B2B', TR: 'B2B İhracat & Tedarik Direktörü' },
+        bio: {
+          EN: 'Bridges European & Middle Eastern procurement executives directly with Turkish manufacturers across 4 languages.',
+          FR: 'Connecte les acheteurs européens et moyen-orientaux aux fabricants industriels turcs.',
+          AR: 'حلقة الوصل بين كبار المستوردين في الخليج وأوروبا والمصانع التركية بـ 4 لغات حية.',
+          TR: 'Avrupa ve Ortadoğu satın alma yöneticilerini Türk üreticilerle 4 dilde doğrudan buluşturan ihracat lideri.'
+        },
+        tools: ['Multilingual RFQs', 'Supply Chain', 'Export B2B'],
+        status: { EN: 'Negotiating EU/GCC RFQs', FR: 'Négociation Devis UE/GCC', AR: 'إدارة طلبات الأسعار الدولية', TR: 'Avrupa/Körfez İhracat Tekliflerini Yönetiyor' },
+        avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'
+      }
+    ];
+
+    // --- Phase 6: Human + AI Hybrid Workflow Steps ---
+    const hybridWorkflowSteps = [
+      {
+        step: '01',
+        title: { EN: 'Strategic Art Direction', FR: 'Direction Artistique Stratégique', AR: 'التوجيه الاستراتيجي البشري', TR: 'Stratejik Sanat Yönetimi' },
+        desc: { EN: 'Human creative directors define luxury tone, market positioning, and conversion goals.', FR: 'Définition de l\'identité de marque et des objectifs de conversion.', AR: 'تحديد الهوية الفاخرة للعلامة التجارية وأهداف التحويل السوقية.', TR: 'Kreatif direktörler marka tonunu ve dönüşüm hedeflerini belirler.' },
+        icon: '🎯'
+      },
+      {
+        step: '02',
+        title: { EN: 'AI Synthesis Engine', FR: 'Moteur de Synthèse IA', AR: 'محرك التوليد البصري بالذكاء الاصطناعي', TR: 'Yapay Zeka Üretim Motoru' },
+        desc: { EN: 'Midjourney v6, Flux.1, and Luma generate hyper-realistic assets in under 24 hours.', FR: 'Production d\'actifs visuels photoréalistes en moins de 24 heures.', AR: 'توليد أصول صور وفيديو فائقة الواقعية في أقل من 24 ساعة.', TR: 'Midjourney ve Flux ile 24 saatten kısa sürede gerçekçi görseller üretilir.' },
+        icon: '⚡'
+      },
+      {
+        step: '03',
+        title: { EN: 'Precision Web & Motion Craft', FR: 'Ingénierie Web & Motion', AR: 'الهندسة التقنية ورسوم الحركة', TR: 'Hassas Web ve Motion Mühendisliği' },
+        desc: { EN: 'Engineered into Next.js 15 applications with 60fps UX physics and RTL Arabic symmetry.', FR: 'Intégration Next.js 15 avec physique fluide et symétrie RTL.', AR: 'بناء تطبيقات Next.js سريعة مع تأثيرات حركة 60 إطار ودعم كامل للعربية.', TR: 'Next.js 15 ve 60fps animasyonlarla pürüzsüz çok dilli kodlama.' },
+        icon: '💻'
+      },
+      {
+        step: '04',
+        title: { EN: 'Multilingual Global Rollout', FR: 'Déploiement Mondial Multilingue', AR: 'الإطلاق العالمي متعدد اللغات', TR: 'Çok Dilli Küresel Dağıtım' },
+        desc: { EN: 'Instant deployment across EN, FR, AR, and TR markets with integrated B2B supplier kits.', FR: 'Lancement synchronisé sur 4 marchés avec kits export B2B.', AR: 'نشر فوري للأسواق المستهدفة بـ 4 لغات مع كتالوجات التصدير المباشرة.', TR: '4 dilde eşzamanlı yayın ve doğrudan B2B ihracat katalogları entegrasyonu.' },
+        icon: '🚢'
+      }
+    ];
+
+    // --- Phase 6: AI Prompt Engineering Library ---
+    const aiPromptsLibrary = [
+      {
+        id: 'team',
+        label: { EN: 'Studio Team Visual', FR: 'Visuel Studio Équipe', AR: 'صورة استوديو الفريق', TR: 'Stüdyo Ekip Görseli' },
+        tool: 'Midjourney v6 / Flux.1',
+        aspect: '--ar 16:9',
+        badge: 'Studio HQ',
+        prompt: `Hyper-realistic corporate photography of a modern high-end creative agency team in Istanbul studio, diverse group of professional designers, software engineers, and video editors collaborating around sleek obsidian glass desk, OLED monitors displaying 3D dark-mode UI analytics and motion graphics, background view of Istanbul skyline through large glass window at dusk, ambient violet lighting mixed with warm golden studio rim light, Hasselblad 8k camera shot, subtle cinematic depth of field, neutral color grading, hyper-detailed skin texture and clothing --ar 16:9 --style raw --v 6.0`
+      },
+      {
+        id: 'packaging',
+        label: { EN: 'Luxury B2B Packaging', FR: 'Emballage B2B Luxe', AR: 'تغليف التصدير الفاخر', TR: 'Lüks İhracat Ambalajı' },
+        tool: 'Midjourney v6 / Flux.1',
+        aspect: '--ar 4:3',
+        badge: 'Product 3D',
+        prompt: `Commercial studio photo of a luxury eco-friendly rigid export box with metallic gold foil stamping on dark obsidian matte surface, precise embossing, floating soft cotton fabrics and sleek aluminum components around it, warm golden spotlight, dramatic ambient shadows, macro lens, 8k resolution --ar 4:3 --v 6.0`
+      },
+      {
+        id: 'motion',
+        label: { EN: '3D Motion Ad Reel', FR: 'Reel Vidéo 3D Motion', AR: 'إعلان فيديو موشن 3D', TR: '3D Kinetik Video Reel' },
+        tool: 'Runway Gen-3 / Luma',
+        aspect: '--ar 9:16',
+        badge: 'Vertical Video',
+        prompt: `Dynamic 3D cinematic camera orbit around a glowing holographic smartphone displaying dark glassmorphism analytics graphs, particle dust trails, radiant indigo and cyan lights flickering, 60fps smooth physics motion, highly realistic studio lighting --ar 9:16`
+      },
+      {
+        id: 'voice',
+        label: { EN: 'ElevenLabs Voiceover', FR: 'Voix-Off ElevenLabs', AR: 'التعليق الصوتي ElevenLabs', TR: 'ElevenLabs Seslendirme' },
+        tool: 'ElevenLabs Multilingual',
+        aspect: '48kHz HD Audio',
+        badge: 'Voice Synthesis',
+        prompt: `"At SamStudio, we bridge global e-commerce and industrial strength with high-converting web engineering, video performance, and multilingual export presentation kits. From Turkey to the world." (Voice: Warm, authoritative, international executive tone in EN, FR, AR, TR).`
+      }
+    ];
+
+    // --- Phase 7: Turkish B2B Export Catalog Items Data ---
+    const catalogItemsData = [
+      {
+        id: 'cnc',
+        title: {
+          EN: 'High-Precision 5-Axis CNC Milling Machinery',
+          FR: 'Centre d\'Usinage CNC 5 Axes Haute Précision',
+          AR: 'آلات تصنيع صناعية CNC خماسية المحاور عالية الدقة',
+          TR: 'Yüksek Hassasiyetli 5 Eksenli CNC İşleme Makinesi'
+        },
+        category: 'machinery',
+        hub: 'Bursa Industrial Free Zone',
+        moq: '1 Unit',
+        leadTime: '21 Days',
+        port: 'Istanbul / Gemlik',
+        fob: '$28,500 - $62,000',
+        specs: {
+          EN: '0.005mm optical tolerance, Siemens 840D controller, automatic tool changer with 32 slots, ISO 9001 & CE safety certified.',
+          FR: 'Tolérance 0.005mm, commande Siemens 840D, changeur d\'outils automatique 32 positions, certifié ISO 9001 et CE.',
+          AR: 'دقة تصنيع 0.005 مم، نظام تحكم Siemens 840D، مبدل أدوات أوتوماتيكي بـ 32 موضعاً، شهادات ISO 9001 ومطابقة المعايير الأوروبية CE.',
+          TR: '0.005mm hassasiyet toleransı, Siemens 840D kontrol ünitesi, 32li otomatik takım değiştirici, ISO 9001 ve CE belgeli.'
+        },
+        img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
+        badge: 'Heavy Industry'
+      },
+      {
+        id: 'packaging',
+        title: {
+          EN: 'Luxury Rigid Export Boxes & Foil Stamping',
+          FR: 'Boîtes Rigides de Luxe & Dorure à Chaud',
+          AR: 'علب تغليف فاخرة صلبة مع طباعة رقائق الذهب',
+          TR: 'Lüks Mukavva İhracat Kutusu & Varak Baskı'
+        },
+        category: 'packaging',
+        hub: 'Istanbul Packaging Cluster',
+        moq: '1,000 Units',
+        leadTime: '12 Days',
+        port: 'Ambarlı / Istanbul',
+        fob: '$1.40 - $3.60 / unit',
+        specs: {
+          EN: '1200gsm greyboard, magnetic closure, soft-touch matte lamination, hot foil stamping in gold/silver, 100% FSC certified recyclable.',
+          FR: 'Carton 1200g, fermeture magnétique, pelliculage mat soft-touch, marquage à chaud or/argent, 100% certifié FSC recyclable.',
+          AR: 'كرتون مقوى 1200 جم، إغلاق مغناطيسي، ملمس مخملي غير لامع، بصمة ذهبية وفضية حرارية، شهادة استدامة FSC 100%.',
+          TR: '1200gr mukavva, mıknatıslı kapak, soft-touch mat laminasyon, altın/gümüş sıcak varak baskı, %100 FSC sertifikalı geri dönüştürülebilir.'
+        },
+        img: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80',
+        badge: 'Luxury Packaging'
+      },
+      {
+        id: 'textile',
+        title: {
+          EN: 'Aegean 100% Organic Cotton Heavyweight Apparel',
+          FR: 'Textile Coton Biologique Égéen Haut de Gamme',
+          AR: 'ملابس قطن إيجي عضوي 100% عالي الكثافة',
+          TR: 'Ege %100 Organik Pamuk Ağır Gramaj Tekstil'
+        },
+        category: 'textile',
+        hub: 'Izmir Textile Free Zone',
+        moq: '250 Units',
+        leadTime: '14 Days',
+        port: 'Izmir Alsancak Port',
+        fob: '$8.50 - $17.50 / unit',
+        specs: {
+          EN: '240gsm French Terry & 100% Aegean organic combed cotton, GOTS certified, OEKO-TEX Standard 100, custom reactive dye Pantone matching.',
+          FR: 'French Terry 240g/m², coton peigné biologique d\'Égée, certifié GOTS et OEKO-TEX 100, teinture réactive Pantone.',
+          AR: 'نسيج فرينش تيري 240 جم من قطن بحر إيجه العضوي، شهادات GOTS العالمية ومعيار OEKO-TEX 100، صباغة تفاعلية مخصصة حسب Pantone.',
+          TR: '240gr French Terry 3 iplik, %100 Ege organik penye pamuk, GOTS ve OEKO-TEX Standard 100 belgeli, özel Pantone reaktif boyama.'
+        },
+        img: 'https://images.unsplash.com/photo-1528458909336-e7a0adfac005?auto=format&fit=crop&w=800&q=80',
+        badge: 'Organic Textile'
+      },
+      {
+        id: 'ev',
+        title: {
+          EN: 'Commercial Dual 180kW DC Fast-Charging Hardware',
+          FR: 'Bornes de Recharge Rapide DC 180kW Commerciales',
+          AR: 'محطات شحن سريع للسيارات الكهربائية DC بقدرة 180 كيلوواط',
+          TR: 'Ticari Çift Çıkışlı 180kW DC Hızlı Şarj İstasyonu'
+        },
+        category: 'electronics',
+        hub: 'Kocaeli Technology Valley',
+        moq: '5 Units',
+        leadTime: '18 Days',
+        port: 'Gebze / Istanbul',
+        fob: '$4,200 - $8,900 / unit',
+        specs: {
+          EN: 'Dual CCS2 connectors, OCPP 2.0.1 cloud telemetry, 96% power efficiency, IP55 weatherproof enclosure with dynamic load balancing.',
+          FR: 'Connecteurs doubles CCS2, télémétrie OCPP 2.0.1, rendement 96%, boîtier étanche IP55 avec gestion dynamique de charge.',
+          AR: 'مقبس شحن مزدوج CCS2، بروتوكول OCPP 2.0.1 السحابي، كفاءة طاقة 96%، مقاومة للعوامل الجوية IP55 مع موازنة الحمل الذكية.',
+          TR: 'Çift CCS2 soket, OCPP 2.0.1 bulut telemetri desteği, %96 enerji verimliliği, IP55 dış ortam koruması ve dinamik yük dengeleme.'
+        },
+        img: 'https://images.unsplash.com/photo-1558441719-21876e4fa83f?auto=format&fit=crop&w=800&q=80',
+        badge: 'CleanTech Hardware'
+      }
+    ];
+
+    // --- Phase 8: 12-Slide Master Pitch Deck Matrix ---
+    const pitchDeckSlides = [
+      {
+        num: '01',
+        category: 'COVER & MISSION',
+        title: {
+          EN: 'Global Creative & Digital Excellence',
+          FR: 'Excellence Créative & Numérique Mondiale',
+          AR: 'التميز الإبداعي والرقمي العالمي',
+          TR: 'Küresel Yaratıcı ve Dijital Mükemmellik'
+        },
+        sub: {
+          EN: 'From Turkey to the World — Multilingual Agency & Industrial Export Partner (EN | FR | AR | TR).',
+          FR: 'De la Turquie au Monde — Agence Multilingue & Partenaire Export Industriel (EN | FR | AR | TR).',
+          AR: 'من تركيا إلى العالم — وكالة متعددة اللغات وشريك تصدير صناعي رائد (EN | FR | AR | TR).',
+          TR: 'Türkiye\'den Dünyaya — Çok Dilli Ajans & Sanayi İhracat Ortağı (EN | FR | AR | TR).'
+        },
+        metric: 'EN • FR • AR • TR',
+        badge: 'Slide 01/12'
+      },
+      {
+        num: '02',
+        category: 'MARKET GAP',
+        title: {
+          EN: 'The Double Barrier for Global Businesses',
+          FR: 'Le Double Défi des Entreprises Mondiales',
+          AR: 'الفجوة المزدوجة أمام الشركات العالمية',
+          TR: 'Küresel Alıcıların Karşılaştığı İki Büyük Engel'
+        },
+        sub: {
+          EN: 'International buyers face overpriced Western creative retainers ($30k+/mo) or slow, unrefined Turkish supplier communications lacking digital sales kits.',
+          FR: 'Frais d\'agences occidentales exorbitants vs communication lente et sans supports digitaux des fournisseurs.',
+          AR: 'تكاليف باهظة للوكالات الغربية مقابل بطء وتواضع العروض التقديمية والتواصل لدى الموردين.',
+          TR: 'Yüksek batılı ajans maliyetleri ve Türk üreticilerin dijital tanıtım eksikliğinden kaynaklanan yavaş ihracat iletişimi.'
+        },
+        metric: '-70% Friction',
+        badge: 'Slide 02/12'
+      },
+      {
+        num: '03',
+        category: 'VALUE PROPOSITION',
+        title: {
+          EN: 'The Infinite Bridge Architecture',
+          FR: 'L\'Architecture du Pont Infini',
+          AR: 'معمارية الجسر اللانهائي المتكامل',
+          TR: 'Sonsuz Köprü Mimarisi'
+        },
+        sub: {
+          EN: 'A world-class hybrid agency connecting elite Next.js engineering, viral motion video ads, and AI visual synthesis directly with verified Turkish manufacturers.',
+          FR: 'Allier design d\'élite, vidéo motion IA et accès direct aux fabricants industriels turcs certifiés.',
+          AR: 'دمج التصميم الراقي وهندسة الويب وإعلانات الحركة مع كبرى المصانع التركية المعتمدة.',
+          TR: 'Dünya standartlarında web mimarisi, AI video reklamlar ve onaylı Türk sanayi üreticilerini tek noktada buluşturuyoruz.'
+        },
+        metric: 'Hybrid Model',
+        badge: 'Slide 03/12'
+      },
+      {
+        num: '04',
+        category: 'SERVICE MATRIX',
+        title: {
+          EN: 'Full-Spectrum Agency Matrix',
+          FR: 'Matrice de Compétences Complète',
+          AR: 'مصفوفة الخدمات المتكاملة للوكالة',
+          TR: 'Kapsamlı Ajans Hizmet Matrisi'
+        },
+        sub: {
+          EN: '1. Luxury Brand Identity | 2. Kinetic Video & Meta Ads | 3. Next.js 15 Web Apps | 4. Social Media Growth | 5. Multilingual B2B Sourcing Catalogs.',
+          FR: '1. Identité Visuelle & Branding | 2. Motion Ads & Vidéo | 3. Apps Next.js | 4. Growth Meta | 5. Catalogues Export B2B.',
+          AR: '1. الهوية البصرية والعلامات التجارية | 2. إعلانات الحركة وميتا | 3. مواقع وتطبيقات Next.js | 4. التسويق والنمو | 5. كتالوجات التصدير B2B.',
+          TR: '1. Marka Kimliği & Grafik | 2. Motion Ads & Video Kurgu | 3. Next.js Web Mimarisi | 4. Meta Ads & Büyüme | 5. B2B İhracat Tedariği.'
+        },
+        metric: '5 Core Pillars',
+        badge: 'Slide 04/12'
+      },
+      {
+        num: '05',
+        category: 'TURKISH SOURCING',
+        title: {
+          EN: 'The Turkish Manufacturing Powerhouse',
+          FR: 'La Puissance Industrielle Turque',
+          AR: 'القوة الصناعية والتصديرية التركية',
+          TR: 'Türkiye\'nin Üretim ve Sanayi Gücü'
+        },
+        sub: {
+          EN: 'Connecting global buyers directly to CNC heavy machinery, luxury eco-packaging, Aegean organic cotton, and Cleantech EV chargers with verified QC standards.',
+          FR: 'Accès direct aux machines CNC de pointe, emballages de luxe, coton bio et bornes de recharge.',
+          AR: 'الوصول المباشر لآلات التصنيع CNC، التغليف الفاخر، القطن العضوي، ومحطات شحن السيارات الكهربائية.',
+          TR: 'CNC ağır sanayi makineleri, lüks ambalaj, Ege organik pamuğu ve elektrikli araç şarj teknolojilerini dünyaya açıyoruz.'
+        },
+        metric: '$250B+ Export Base',
+        badge: 'Slide 05/12'
+      },
+      {
+        num: '06',
+        category: 'AI SYNTHESIS',
+        title: {
+          EN: 'AI Visual Engine: 24-Hour Turnaround',
+          FR: 'Moteur IA : Livraison en 24 Heures',
+          AR: 'محرك الذكاء الاصطناعي: تسليم خلال 24 ساعة',
+          TR: 'Yapay Zeka Motoru: 24 Saatte Teslimat'
+        },
+        sub: {
+          EN: 'Midjourney v6, Flux.1, and Luma pipelines collapse traditional 14-day production cycles into 24-hour turnaround with zero studio overhead.',
+          FR: 'Réduction du temps de production visuelle de 14 jours à 24 heures sans frais de studio physique.',
+          AR: 'تقليص دورة إنتاج المواد البصرية من 14 يوماً إلى 24 ساعة فقط بدقة فائقة وبدون تكاليف استوديو باهظة.',
+          TR: 'Midjourney v6 ve Flux ile geleneksel 14 günlük görsel üretim sürecini stüdyo masrafı olmadan 24 saate indiriyoruz.'
+        },
+        metric: '10x Speed',
+        badge: 'Slide 06/12'
+      },
+      {
+        num: '07',
+        category: 'I18N ARCHITECTURE',
+        title: {
+          EN: 'Quad-Language Engine & Arabic RTL Symmetry',
+          FR: 'Moteur Quadri-Langue & Symétrie RTL Arabe',
+          AR: 'المحرك الرباعي للغات ودعم كامل للكتابة العربية RTL',
+          TR: 'Dört Dilli Mimari ve Kusursuz RTL Arapça Uyumu'
+        },
+        sub: {
+          EN: 'Native copywriting and design symmetry across English, French, Arabic (Cairo font with optical scaling), and Turkish.',
+          FR: 'Rédaction native et symétrie visuelle en Anglais, Français, Arabe (police Cairo) et Turc.',
+          AR: 'صياغة نصوص وتصميم متناسق بـ 4 لغات عالمية مع مراعاة كاملة لجماليات الخط العربي وتخطيط RTL.',
+          TR: 'İngilizce, Fransızca, Arapça (Cairo tipografisi) ve Türkçe dillerinde yerel metin ve simetrik tasarım desteği.'
+        },
+        metric: '4 Global Markets',
+        badge: 'Slide 07/12'
+      },
+      {
+        num: '08',
+        category: 'WEB INFRASTRUCTURE',
+        title: {
+          EN: 'Ultra-Lean Edge Architecture',
+          FR: 'Architecture Web Next.js & Edge Ultra-Légère',
+          AR: 'بنية برمجية فائقة السرعة بتقنية Next.js وCloudflare',
+          TR: 'Ultra Hızlı Next.js ve Edge Altyapısı'
+        },
+        sub: {
+          EN: 'Cloudflare Pages edge rendering, sub-second load times, 60fps UX motion physics, and enterprise security at ~$10/year operational cost.',
+          FR: 'Rendu Edge Cloudflare, chargement en moins d\'une seconde, animations 60fps pour ~10$/an de coût d\'infrastructure.',
+          AR: 'استضافة سريعة على Cloudflare Edge، سرعة تحميل لحظية، وحماية مشددة بتكلفة لا تتجاوز 10$ سنوياً.',
+          TR: 'Cloudflare Pages üzerinde çalışan, saniyenin altında açılan, 60fps animasyonlu ve yıllık ~$10 maliyetli web mimarisi.'
+        },
+        metric: '99+ Lighthouse',
+        badge: 'Slide 08/12'
+      },
+      {
+        num: '09',
+        category: 'PORTFOLIO & CRAFT',
+        title: {
+          EN: 'Proven Craft Across High-Impact Deliverables',
+          FR: 'Un Savoir-Faire Éprouvé sur des Projets d\'Élite',
+          AR: 'أعمال استثنائية ونماذج مشاريع عالية التأثير',
+          TR: 'Kanıtlanmış Başarılı Proje ve Çıktılar'
+        },
+        sub: {
+          EN: 'Dark-mode SaaS portals (+184% conversion), 3.4x ROAS TikTok/Meta reels, luxury 3D packaging renders, and $1.2M+ B2B export RFQ volume.',
+          FR: 'Portails SaaS sombres (+184% conv.), ROAS 3.4x en ads vidéo, et plus de 1,2M$ de volume RFQ traité.',
+          AR: 'منصات برمجية فاخرة بمعدل تحويل +184%، وإعلانات فيديو بعائد ROAS 3.4x، وعروض تصدير تجاوزت 1.2 مليون دولار.',
+          TR: '%184 dönüşüm artışı sağlayan SaaS panelleri, 3.4x ROAS video reklamlar ve $1.2M+ ihracat teklif hacmi.'
+        },
+        metric: 'Verified Impact',
+        badge: 'Slide 09/12'
+      },
+      {
+        num: '10',
+        category: 'QUALITY ASSURANCE',
+        title: {
+          EN: 'The 4-Step CoT Quality Loop',
+          FR: 'Le Cycle Qualité CoT en 4 Étapes',
+          AR: 'حلقة الجودة والتنفيذ الصارمة CoT ذات الـ 4 مراحل',
+          TR: '4 Aşamalı CoT Kalite Döngüsü'
+        },
+        sub: {
+          EN: '1. Doing (Rapid Execution) → 2. Refining (Visual & Depth Polish) → 3. Debugging (RTL & Responsiveness) → 4. Checking (Awwwards Sign-Off).',
+          FR: '1. Doing (Exécution rapide) → 2. Refining (Polissage visuel) → 3. Debugging (Audit RTL) → 4. Checking (Validation finale).',
+          AR: '1. التنفيذ السريع ← 2. التحسين والصقل البصري ← 3. فحص الأداء وتناسق RTL ← 4. الاعتماد النهائي بأعلى معايير Awwwards.',
+          TR: '1. Doing (Hızlı Üretim) → 2. Refining (Görsel ve Derinlik) → 3. Debugging (RTL ve Uyum) → 4. Checking (Final Kalite Onayı).'
+        },
+        metric: 'Zero-Defect QA',
+        badge: 'Slide 10/12'
+      },
+      {
+        num: '11',
+        category: 'PARTNERSHIP',
+        title: {
+          EN: 'High-Yield Engagement Models',
+          FR: 'Modèles de Partenariat à Fort Rendement',
+          AR: 'نماذج التعاقد والشراكة المرنة',
+          TR: 'Esnek ve Yüksek Getirili Çalışma Modelleri'
+        },
+        sub: {
+          EN: '1. Project-Based Sprint (Specific Web/Video Asset) | 2. Monthly Growth Retainer (Full Agency Stack) | 3. B2B Export Expansion Package.',
+          FR: '1. Sprint par Projet | 2. Abonnement Mensuel Growth | 3. Package d\'Expansion Export B2B.',
+          AR: '1. إنجاز مشاريع محددة (موقع/إعلانات) | 2. شراكة نمو شهرية متكاملة | 3. باقة التوسع وتصدير المنتجات التركية B2B.',
+          TR: '1. Proje Bazlı Sprint (Web/Video) | 2. Aylık Ajans Büyüme Modeli | 3. B2B Küresel İhracat Genişleme Paketi.'
+        },
+        metric: 'Flexible & Lean',
+        badge: 'Slide 11/12'
+      },
+      {
+        num: '12',
+        category: 'NEXT STEP',
+        title: {
+          EN: 'Ready to Elevate Your Global Presence?',
+          FR: 'Prêt à Déployer Votre Présence Internationale ?',
+          AR: 'هل أنت مستعد للانطلاق نحو الأسواق العالمية؟',
+          TR: 'Küresel Pazarlarda Öne Çıkmaya Hazır Mısınız?'
+        },
+        sub: {
+          EN: 'Schedule a 15-minute strategy call with our executive directors or request a customized B2B sourcing presentation kit today.',
+          FR: 'Planifiez un appel stratégique de 15 minutes ou demandez votre kit d\'export B2B personnalisé dès aujourd\'hui.',
+          AR: 'احجز مكالمة استراتيجية مدتها 15 دقيقة مع مديري الوكالة أو اطلب كتالوج التصدير المخصص لشركتك اليوم.',
+          TR: 'Kreatif direktörlerimizle 15 dakikalık strateji randevusu planlayın veya size özel B2B ihracat tanıtım kitinizi talep edin.'
+        },
+        metric: 'Instant Response',
+        badge: 'Slide 12/12'
+      }
+    ];
+
+    // --- Main React Application Component ---
+    function App() {
+      const [lang, setLang] = useState('EN');
+      const [deckModalOpen, setDeckModalOpen] = useState(false);
+      const [activeDeckSlide, setActiveDeckSlide] = useState(0);
+      const [copiedPrompt, setCopiedPrompt] = useState(false);
+      const [scrolled, setScrolled] = useState(false);
+      const [portfolioFilter, setPortfolioFilter] = useState('all');
+      const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
+      const [activePromptTab, setActivePromptTab] = useState('team');
+      const [mobileNavOpen, setMobileNavOpen] = useState(false);
+      
+      // Phase 7 & 8 States
+      const [selectedCatalogItem, setSelectedCatalogItem] = useState(null);
+      const [rfqModalOpen, setRfqModalOpen] = useState(false);
+      const [rfqProduct, setRfqProduct] = useState(catalogItemsData[0].title.EN);
+      const [rfqQty, setRfqQty] = useState('500');
+      const [rfqCountry, setRfqCountry] = useState('Germany / European Union');
+      const [rfqContact, setRfqContact] = useState('');
+      const [rfqNotes, setRfqNotes] = useState('');
+      const [rfqSubmitted, setRfqSubmitted] = useState(false);
+
+      // Contact Form States
+      const [contactName, setContactName] = useState('');
+      const [contactValue, setContactValue] = useState('');
+      const [contactService, setContactService] = useState('Web Design & App Architecture');
+      const [contactSubmitting, setContactSubmitting] = useState(false);
+      const [contactSuccess, setContactSuccess] = useState(false);
+
+      const t = i18n[lang];
+
+      // Handle Scroll for Header Transformation
+      useEffect(() => {
+        const handleScroll = () => {
+          setScrolled(window.scrollY > 30);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, []);
+
+      // Dynamic RTL / LTR HTML Attribute Synchronization
+      useEffect(() => {
+        document.documentElement.dir = t.dir;
+      }, [lang]);
+
+      // Keyboard navigation for Pitch Deck Modal (Phase 8)
+      useEffect(() => {
+        const handleKeyDown = (e) => {
+          if (!deckModalOpen) return;
+          if (e.key === 'ArrowRight' || e.key === ' ') {
+            setActiveDeckSlide(prev => Math.min(pitchDeckSlides.length - 1, prev + 1));
+          } else if (e.key === 'ArrowLeft') {
+            setActiveDeckSlide(prev => Math.max(0, prev - 1));
+          } else if (e.key === 'Escape') {
+            setDeckModalOpen(false);
+          }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+      }, [deckModalOpen]);
+
+      const currentPromptObj = aiPromptsLibrary.find(p => p.id === activePromptTab) || aiPromptsLibrary[0];
+
+      const handleCopyPrompt = () => {
+        navigator.clipboard.writeText(currentPromptObj.prompt);
+        setCopiedPrompt(true);
+        setTimeout(() => setCopiedPrompt(false), 2500);
+      };
+
+      const handleOpenRfqForProduct = (item) => {
+        setRfqProduct(item.title[lang] || item.title.EN);
+        setSelectedCatalogItem(null);
+        setRfqModalOpen(true);
+      };
+
+      const handleRfqSubmit = async (e) => {
+        e.preventDefault();
+        setRfqSubmitted(true);
+        try {
+          const res = await fetch('/api/rfq', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              product: rfqProduct,
+              quantity: rfqQty,
+              country: rfqCountry,
+              contact: rfqContact,
+              notes: rfqNotes,
+              lang: lang
+            })
+          });
+          const data = await res.json();
+          setRfqSubmitted(false);
+          setRfqModalOpen(false);
+          alert(t.rfqSuccess);
+        } catch (err) {
+          setRfqSubmitted(false);
+          setRfqModalOpen(false);
+          alert(t.rfqSuccess);
+        }
+      };
+
+      const handleContactSubmit = async (e) => {
+        e.preventDefault();
+        if (!contactName || !contactValue) {
+          alert('Please provide your name and contact information.');
+          return;
+        }
+        setContactSubmitting(true);
+        try {
+          const res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: contactName,
+              contact: contactValue,
+              service: contactService,
+              lang: lang
+            })
+          });
+          const data = await res.json();
+          setContactSubmitting(false);
+          setContactSuccess(true);
+          setTimeout(() => setContactSuccess(false), 5000);
+        } catch (err) {
+          setContactSubmitting(false);
+          setContactSuccess(true);
+          setTimeout(() => setContactSuccess(false), 5000);
+        }
+      };
+
+      // Filtered Portfolio Items
+      const filteredPortfolio = portfolioFilter === 'all' 
+        ? portfolioItems 
+        : portfolioItems.filter(item => item.category === portfolioFilter);
+
+      return (
+        <div className="min-h-screen flex flex-col bg-obsidian text-zinc-100 bg-grid-pattern relative overflow-x-hidden">
+          
+          {/* Volumetric Ambient Mesh Glows */}
+          <div className="fixed top-0 left-1/4 w-[600px] h-[600px] bg-accent-violet/10 rounded-full blur-[150px] pointer-events-none animate-pulse-slow"></div>
+          <div className="fixed top-1/3 right-10 w-[500px] h-[500px] bg-accent-gold/10 rounded-full blur-[160px] pointer-events-none"></div>
+          <div className="fixed bottom-10 left-10 w-[450px] h-[450px] bg-accent-cyan/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+          {/* Sticky Glass Navigation Header */}
+          <header className={`sticky top-0 z-50 transition-all duration-300 px-4 md:px-8 py-4 ${
+            scrolled 
+              ? 'backdrop-blur-2xl bg-obsidian/85 border-b border-white/10 shadow-2xl py-3' 
+              : 'bg-transparent border-b border-white/5'
+          }`}>
+            <div className="max-w-7xl mx-auto flex items-center justify-between">
+              
+              {/* Brand Logo & Monogram Mark */}
+              <a href="#" className="flex items-center gap-3 group">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-gold-light via-accent-gold to-amber-600 flex items-center justify-center font-extrabold text-obsidian text-lg shadow-glow-gold transition-all duration-300 group-hover:scale-105">
+                  SS
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-extrabold tracking-widest text-lg text-white group-hover:text-accent-gold-light transition-colors">
+                    SamStudio
+                  </span>
+                  <span className="text-[9px] tracking-widest text-zinc-400 uppercase font-mono">
+                    Global Agency & Export
+                  </span>
+                </div>
+              </a>
+
+              {/* Desktop Navigation Links */}
+              <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
+                <a href="#services" className="hover:text-accent-gold transition-colors">{t.navServices}</a>
+                <a href="#portfolio" className="hover:text-accent-gold transition-colors">{t.navPortfolio}</a>
+                <a href="#team" className="hover:text-accent-gold transition-colors">{t.navTeam}</a>
+                <a href="#catalog" className="hover:text-accent-gold transition-colors flex items-center gap-1.5">
+                  <span>{t.navCatalog}</span>
+                  <span className="px-2 py-0.5 text-[9px] bg-amber-500/20 border border-amber-500/40 text-accent-gold-light rounded-full font-mono">TR Export</span>
+                </a>
+                <button 
+                  onClick={() => setDeckModalOpen(true)}
+                  className="hover:text-accent-gold transition-colors flex items-center gap-1.5 group"
+                >
+                  <span>{t.navPitch}</span>
+                  <span className="px-2 py-0.5 text-[10px] bg-accent-violet/20 border border-accent-violet/40 text-accent-violet-glow rounded-full font-mono group-hover:bg-accent-violet/30">12 Slides</span>
+                </button>
+              </nav>
+
+              {/* Multilingual Selector, Mobile Drawer Button & Primary CTA */}
+              <div className="flex items-center gap-3">
+                {/* Segmented Language Switcher */}
+                <div className="flex items-center bg-zinc-card/90 border border-white/10 rounded-full p-1 text-xs font-semibold backdrop-blur-md">
+                  {['EN', 'FR', 'AR', 'TR'].map((code) => (
+                    <button
+                      key={code}
+                      onClick={() => setLang(code)}
+                      className={`px-2.5 py-1 rounded-full transition-all duration-300 ${
+                        lang === code 
+                          ? 'bg-accent-violet text-white shadow-glow-violet font-bold' 
+                          : 'text-zinc-400 hover:text-white'
+                      }`}
+                    >
+                      {code}
+                    </button>
+                  ))}
+                </div>
+
+                <a 
+                  href="#contact" 
+                  className="hidden sm:inline-flex px-5 py-2.5 rounded-full text-xs font-extrabold btn-gold-glow text-obsidian tracking-wide uppercase"
+                >
+                  {t.ctaPrimary}
+                </a>
+
+                {/* Mobile Drawer Hamburger Button */}
+                <button
+                  onClick={() => setMobileNavOpen(!mobileNavOpen)}
+                  className="md:hidden w-10 h-10 rounded-xl bg-zinc-card border border-white/10 flex items-center justify-center text-white"
+                  aria-label="Toggle Navigation"
+                >
+                  {mobileNavOpen ? '✕' : '☰'}
+                </button>
+              </div>
+
+            </div>
+
+            {/* Mobile Navigation Drawer Dropdown */}
+            {mobileNavOpen && (
+              <div className="md:hidden mt-4 pt-4 border-t border-white/10 flex flex-col gap-3 pb-2 bg-obsidian/95 backdrop-blur-2xl rounded-2xl p-4">
+                <a 
+                  href="#services" 
+                  onClick={() => setMobileNavOpen(false)}
+                  className="px-3 py-2 rounded-lg text-sm text-zinc-300 hover:bg-white/5 hover:text-white"
+                >
+                  {t.navServices}
+                </a>
+                <a 
+                  href="#portfolio" 
+                  onClick={() => setMobileNavOpen(false)}
+                  className="px-3 py-2 rounded-lg text-sm text-zinc-300 hover:bg-white/5 hover:text-white"
+                >
+                  {t.navPortfolio}
+                </a>
+                <a 
+                  href="#team" 
+                  onClick={() => setMobileNavOpen(false)}
+                  className="px-3 py-2 rounded-lg text-sm text-zinc-300 hover:bg-white/5 hover:text-white"
+                >
+                  {t.navTeam}
+                </a>
+                <a 
+                  href="#catalog" 
+                  onClick={() => setMobileNavOpen(false)}
+                  className="px-3 py-2 rounded-lg text-sm text-accent-gold-light hover:bg-white/5 font-semibold"
+                >
+                  {t.navCatalog} (Turkish B2B)
+                </a>
+                <button 
+                  onClick={() => {
+                    setMobileNavOpen(false);
+                    setDeckModalOpen(true);
+                  }}
+                  className="px-3 py-2 rounded-lg text-sm text-accent-violet-glow text-left hover:bg-white/5 flex items-center justify-between"
+                >
+                  <span>{t.navPitch}</span>
+                  <span className="text-[10px] px-2 py-0.5 bg-accent-violet/20 rounded-full">12 Slides</span>
+                </button>
+                <a 
+                  href="#contact" 
+                  onClick={() => setMobileNavOpen(false)}
+                  className="mt-2 text-center py-3 rounded-xl btn-gold-glow text-obsidian font-extrabold text-xs uppercase tracking-wider"
+                >
+                  {t.ctaPrimary}
+                </a>
+              </div>
+            )}
+          </header>
+
+          {/* --- HERO SECTION CANVAS --- */}
+          <section className="relative pt-16 pb-20 md:pt-24 md:pb-28 px-4 md:px-8 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
+            
+            {/* Top Kinetic Agency Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-amber-500/30 text-accent-gold-light text-xs font-mono tracking-widest mb-8 shadow-inner animate-float">
+              <span className="w-2.5 h-2.5 rounded-full bg-accent-gold animate-ping"></span>
+              <span>{t.heroBadge}</span>
+            </div>
+
+            {/* Kinetic Hero Main Headline */}
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight max-w-6xl leading-[1.08] mb-8">
+              {lang === 'AR' ? (
+                <span className="text-gradient-gold">{t.heroTitle1} {t.heroTitle2}</span>
+              ) : (
+                <>
+                  {t.heroTitle1} <span className="text-gradient-gold">{t.heroTitle2}</span>
+                </>
+              )}
+            </h1>
+
+            {/* Subhead Narrative */}
+            <p className="text-base sm:text-xl text-zinc-300 max-w-3xl font-normal leading-relaxed mb-12">
+              {t.heroSub}
+            </p>
+
+            {/* CTA Button Group */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-16">
+              <a 
+                href="#contact" 
+                className="w-full sm:w-auto px-8 py-4 rounded-xl btn-gold-glow text-obsidian font-extrabold text-sm tracking-wide text-center"
+              >
+                {t.ctaPrimary}
+              </a>
+              <button 
+                onClick={() => setDeckModalOpen(true)}
+                className="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-white font-semibold hover:border-accent-violet/50 transition-all text-sm flex items-center justify-center gap-2"
+              >
+                <span>📊</span>
+                <span>{t.ctaSecondary}</span>
+              </button>
+              <a 
+                href="#catalog"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-accent-gold-light font-semibold hover:border-accent-gold/50 transition-all text-sm flex items-center justify-center gap-2"
+              >
+                <span>🚢</span>
+                <span>{t.ctaCatalog}</span>
+              </a>
+            </div>
+
+            {/* Interactive Hero Performance Metrics Matrix */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-5xl pt-10 border-t border-white/10">
+              <div className="glass-card p-5 text-center">
+                <div className="text-2xl sm:text-3xl font-extrabold text-white font-mono">{t.stats1Value}</div>
+                <div className="text-xs text-zinc-400 mt-1">{t.stats1Label}</div>
+              </div>
+              <div className="glass-card p-5 text-center border-amber-500/20">
+                <div className="text-2xl sm:text-3xl font-extrabold text-accent-gold-light font-mono">{t.stats2Value}</div>
+                <div className="text-xs text-zinc-400 mt-1">{t.stats2Label}</div>
+              </div>
+              <div className="glass-card p-5 text-center border-indigo-500/20">
+                <div className="text-2xl sm:text-3xl font-extrabold text-accent-violet-glow font-mono">{t.stats3Value}</div>
+                <div className="text-xs text-zinc-400 mt-1">{t.stats3Label}</div>
+              </div>
+              <div className="glass-card p-5 text-center border-emerald-500/20">
+                <div className="text-2xl sm:text-3xl font-extrabold text-accent-emerald font-mono">{t.stats4Value}</div>
+                <div className="text-xs text-zinc-400 mt-1">{t.stats4Label}</div>
+              </div>
+            </div>
+
+          </section>
+
+          {/* Infinite Kinetic Ticker Banner */}
+          <div className="w-full bg-zinc-dark/90 border-y border-white/10 py-3.5 overflow-hidden backdrop-blur-md my-6">
+            <div className="flex whitespace-nowrap animate-marquee">
+              {[...t.tickerItems, ...t.tickerItems].map((item, idx) => (
+                <div key={idx} className="flex items-center gap-6 mx-6 text-xs font-mono tracking-widest text-zinc-400 uppercase">
+                  <span className="text-accent-gold">✦</span>
+                  <span className="hover:text-white transition-colors">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Services Matrix Preview Section */}
+          <section id="services" className="py-20 px-4 md:px-8 max-w-7xl mx-auto w-full">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4">{t.servicesTitle}</h2>
+              <p className="text-zinc-400 text-base md:text-lg">{t.servicesSub}</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {servicesData.map((s) => (
+                <div 
+                  key={s.id}
+                  className={`glass-card p-8 flex flex-col justify-between group relative overflow-hidden bg-gradient-to-b ${s.color}`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-6">
+                      <span className="text-4xl p-3 bg-zinc-dark/90 rounded-2xl border border-white/10 shadow-inner">{s.icon}</span>
+                      <span className={`text-[10px] font-mono uppercase tracking-wider px-3 py-1 rounded-full border ${s.border} ${s.glow} bg-obsidian/80`}>
+                        {s.badge}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent-gold-light transition-colors">
+                      {s.title[lang] || s.title.EN}
+                    </h3>
+                    <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                      {s.desc[lang] || s.desc.EN}
+                    </p>
+                  </div>
+                  <a 
+                    href="#contact"
+                    className="inline-flex items-center gap-2 text-xs font-bold text-zinc-300 hover:text-white transition-colors pt-4 border-t border-white/5"
+                  >
+                    <span>Inquire Service</span>
+                    <span>→</span>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* --- PHASE 5: INTERACTIVE WORK SHOWCASE PORTFOLIO --- */}
+          <section id="portfolio" className="py-20 px-4 md:px-8 max-w-7xl mx-auto w-full">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <div className="inline-block px-3.5 py-1 rounded-full bg-accent-violet/20 border border-accent-violet/40 text-accent-violet-glow text-xs font-mono mb-3">
+                AWWWARDS-GRADE CREATIVE OUTPUT
+              </div>
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4">{t.portfolioTitle}</h2>
+              <p className="text-zinc-400 text-base md:text-lg">{t.portfolioSub}</p>
+            </div>
+
+            {/* Category Filter Tabs */}
+            <div className="flex flex-wrap items-center justify-center gap-2.5 mb-12">
+              {[
+                { id: 'all', label: t.tabAll },
+                { id: 'web', label: t.tabWeb },
+                { id: 'video', label: t.tabVideo },
+                { id: 'ai', label: t.tabAi },
+                { id: 'b2b', label: t.tabB2b },
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setPortfolioFilter(tab.id)}
+                  className={`px-5 py-2.5 rounded-full text-xs font-semibold transition-all duration-300 border ${
+                    portfolioFilter === tab.id
+                      ? 'bg-accent-violet text-white border-accent-violet-glow shadow-glow-violet font-bold'
+                      : 'bg-zinc-card/80 text-zinc-400 border-white/10 hover:border-white/20 hover:text-white'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Portfolio Grid Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPortfolio.map((item) => (
+                <div 
+                  key={item.id} 
+                  className="glass-card overflow-hidden flex flex-col group cursor-pointer"
+                  onClick={() => setSelectedCaseStudy(item)}
+                >
+                  {/* Card Media Preview Frame */}
+                  <div className="h-56 overflow-hidden relative">
+                    <img 
+                      src={item.img} 
+                      alt={item.title[lang] || item.title.EN} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent opacity-80"></div>
+                    
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-obsidian/80 backdrop-blur-md text-[10px] font-mono text-white border border-white/10">
+                      {item.tag}
+                    </div>
+
+                    <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-accent-gold/20 backdrop-blur-md text-[11px] font-mono font-bold text-accent-gold-light border border-accent-gold/40">
+                      {item.metrics}
+                    </div>
+                  </div>
+
+                  {/* Card Description */}
+                  <div className="p-6 flex-1 flex flex-col justify-between bg-zinc-card/40">
+                    <div>
+                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-accent-gold-light transition-colors">
+                        {item.title[lang] || item.title.EN}
+                      </h3>
+                      <p className="text-zinc-400 text-xs leading-relaxed line-clamp-2">
+                        {item.desc[lang] || item.desc.EN}
+                      </p>
+                    </div>
+
+                    <div className="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-accent-violet-glow group-hover:text-white transition-colors">
+                      <span>Explore Showcase</span>
+                      <span>→</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* --- PHASE 6: STUDIO TEAM, HYBRID WORKFLOW & AI PROMPT LAB --- */}
+          <section id="team" className="py-24 px-4 md:px-8 max-w-7xl mx-auto w-full">
+            
+            {/* Section Header */}
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-accent-violet/20 border border-accent-violet/40 text-accent-violet-glow text-xs font-mono mb-3">
+                <span className="w-2 h-2 rounded-full bg-accent-emerald animate-ping"></span>
+                <span>{t.teamBadge}</span>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4">{t.teamTitle}</h2>
+              <p className="text-zinc-400 text-base md:text-lg">{t.teamSub}</p>
+            </div>
+
+            {/* 4-Stage Human + AI Hybrid Workflow Flowchart */}
+            <div className="mb-20">
+              <div className="text-center mb-8">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-1">{t.workflowTitle}</h3>
+                <p className="text-xs md:text-sm text-zinc-400 font-mono">{t.workflowSub}</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {hybridWorkflowSteps.map((wf) => (
+                  <div key={wf.step} className="glass-card p-6 relative overflow-hidden flex flex-col justify-between group hover:border-accent-violet/50">
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-3xl p-2.5 bg-zinc-dark rounded-xl border border-white/10">{wf.icon}</span>
+                        <span className="font-mono text-2xl font-black text-white/20 group-hover:text-accent-gold-light transition-colors">
+                          {wf.step}
+                        </span>
+                      </div>
+                      <h4 className="text-base font-bold text-white mb-2 group-hover:text-accent-gold-light transition-colors">
+                        {wf.title[lang] || wf.title.EN}
+                      </h4>
+                      <p className="text-zinc-400 text-xs leading-relaxed">
+                        {wf.desc[lang] || wf.desc.EN}
+                      </p>
+                    </div>
+                    <div className="w-full h-1 bg-white/5 rounded-full mt-4 overflow-hidden">
+                      <div className="w-1/3 h-full bg-gradient-to-r from-accent-violet to-accent-gold rounded-full group-hover:w-full transition-all duration-500"></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Studio HQ Visual Frame & Live AI Prompt Lab */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
+              
+              {/* Studio HQ Photography Frame */}
+              <div className="lg:col-span-5 relative rounded-2xl overflow-hidden border border-white/10 group shadow-2xl min-h-[380px] flex flex-col justify-end">
+                <img 
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" 
+                  alt="SamStudio Istanbul HQ Collaboration Workspace" 
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-90 contrast-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent"></div>
+                
+                <div className="relative p-6 bg-obsidian/85 backdrop-blur-md border-t border-white/10 m-4 rounded-xl">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-white font-extrabold text-sm tracking-wide">Istanbul Studio HQ</span>
+                    <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40">
+                      <span className="w-2 h-2 rounded-full bg-accent-emerald animate-ping"></span>
+                      <span className="text-[10px] text-accent-emerald font-mono font-bold">UTC+3 Live</span>
+                    </div>
+                  </div>
+                  <p className="text-zinc-400 text-xs leading-relaxed">
+                    Multidisciplinary creative directors, software engineers, and motion specialists collaborating in real time.
+                  </p>
+                </div>
+              </div>
+
+              {/* Interactive AI Prompt Engineering Lab */}
+              <div className="lg:col-span-7 glass-card p-6 md:p-8 flex flex-col justify-between border-accent-gold/30 bg-gradient-to-b from-amber-500/5 via-zinc-card/90 to-obsidian">
+                <div>
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                    <div>
+                      <span className="text-[11px] font-mono uppercase tracking-wider text-accent-gold-light font-bold block">
+                        PROMPT SYNTHESIS ENGINE
+                      </span>
+                      <h3 className="text-lg md:text-xl font-bold text-white">{t.promptBoxTitle}</h3>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-zinc-300">
+                        {currentPromptObj.tool}
+                      </span>
+                      <span className="text-xs font-mono px-2 py-1 rounded-md bg-accent-violet/20 border border-accent-violet/40 text-accent-violet-glow">
+                        {currentPromptObj.aspect}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Prompt Category Tabs */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {aiPromptsLibrary.map((p) => (
+                      <button
+                        key={p.id}
+                        onClick={() => setActivePromptTab(p.id)}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold font-mono transition-all duration-200 border ${
+                          activePromptTab === p.id
+                            ? 'bg-accent-gold text-obsidian border-accent-gold-light font-bold shadow-glow-gold'
+                            : 'bg-zinc-dark/90 text-zinc-400 border-white/10 hover:text-white hover:border-white/20'
+                        }`}
+                      >
+                        {p.label[lang] || p.label.EN}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Terminal Prompt Text Box */}
+                  <div className="bg-obsidian/95 rounded-xl p-4 border border-white/10 font-mono text-xs text-zinc-300 relative shadow-inner my-2 min-h-[120px] flex items-center">
+                    <p className="leading-relaxed select-all">
+                      <span className="text-accent-gold-light font-bold mr-2">&gt;</span>
+                      "{currentPromptObj.prompt}"
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 mt-4 border-t border-white/10">
+                  <span className="text-[11px] font-mono text-zinc-500">
+                    Target Pipeline: {currentPromptObj.badge} • Ready for Production
+                  </span>
+                  <button 
+                    onClick={handleCopyPrompt}
+                    className={`w-full sm:w-auto px-5 py-2.5 rounded-xl text-xs font-extrabold tracking-wide transition-all duration-300 flex items-center justify-center gap-2 ${
+                      copiedPrompt 
+                        ? 'bg-emerald-500 text-obsidian shadow-lg' 
+                        : 'btn-gold-glow text-obsidian'
+                    }`}
+                  >
+                    <span>{copiedPrompt ? '✓' : '📋'}</span>
+                    <span>{copiedPrompt ? t.copiedText : t.copyPromptBtn}</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Core Multidisciplinary Specialist Cards */}
+            <div>
+              <div className="text-center max-w-2xl mx-auto mb-10">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{t.activeMembersTitle}</h3>
+                <p className="text-zinc-400 text-xs md:text-sm font-mono">
+                  World-class creative talent bridging design finesse and technical execution.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {teamMembersData.map((member) => (
+                  <div key={member.id} className="glass-card p-6 flex flex-col justify-between group hover:border-accent-violet/50">
+                    <div>
+                      {/* Avatar & Live Status Pill */}
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="w-14 h-14 rounded-2xl overflow-hidden border-2 border-white/10 group-hover:border-accent-gold-light transition-colors relative shadow-lg">
+                          <img src={member.avatar} alt={member.name} className="w-full h-full object-cover" />
+                        </div>
+                        <div>
+                          <h4 className="font-extrabold text-white text-base group-hover:text-accent-gold-light transition-colors">
+                            {member.name}
+                          </h4>
+                          <span className="text-xs font-medium text-accent-violet-glow block">
+                            {member.role[lang] || member.role.EN}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Bio Narrative */}
+                      <p className="text-zinc-400 text-xs leading-relaxed mb-4">
+                        {member.bio[lang] || member.bio.EN}
+                      </p>
+
+                      {/* Tool Badges */}
+                      <div className="flex flex-wrap gap-1.5 mb-4">
+                        {member.tools.map((tool, idx) => (
+                          <span key={idx} className="px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-300">
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Active Live Status */}
+                    <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[11px] font-mono">
+                      <span className="text-zinc-500">Live Status:</span>
+                      <div className="flex items-center gap-1.5 text-accent-emerald">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent-emerald animate-pulse"></span>
+                        <span>{member.status[lang] || member.status.EN}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </section>
+
+          {/* --- PHASE 7: B2B MULTILINGUAL SUPPLIER PORTAL & RFQ ENGINE --- */}
+          <section id="catalog" className="py-24 px-4 md:px-8 max-w-7xl mx-auto w-full">
+            
+            {/* Section Header */}
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 border border-amber-500/40 text-accent-gold-light text-xs font-mono mb-3">
+                <span className="text-accent-gold font-bold">🇹🇷</span>
+                <span>{t.catalogBadge}</span>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4">{t.catalogTitle}</h2>
+              <p className="text-zinc-400 text-base md:text-lg">{t.catalogSub}</p>
+            </div>
+
+            {/* Catalog Grid Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+              {catalogItemsData.map((item) => (
+                <div 
+                  key={item.id}
+                  className="glass-card overflow-hidden flex flex-col justify-between border-amber-500/20 group bg-gradient-to-b from-amber-500/5 via-zinc-card/60 to-obsidian"
+                >
+                  <div>
+                    {/* Media Preview Frame */}
+                    <div className="h-64 overflow-hidden relative">
+                      <img 
+                        src={item.img} 
+                        alt={item.title[lang] || item.title.EN} 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out brightness-90"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent"></div>
+
+                      <div className="absolute top-4 left-4 flex items-center gap-2">
+                        <span className="px-3 py-1 rounded-full bg-obsidian/90 backdrop-blur-md text-[10px] font-mono text-accent-gold-light border border-amber-500/40">
+                          {item.badge}
+                        </span>
+                        <span className="px-3 py-1 rounded-full bg-zinc-card/90 backdrop-blur-md text-[10px] font-mono text-zinc-300 border border-white/10">
+                          📍 {item.hub}
+                        </span>
+                      </div>
+
+                      <div className="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-xl bg-obsidian/90 backdrop-blur-md text-xs font-mono font-extrabold text-accent-gold-light border border-amber-500/50 shadow-glow-gold">
+                        FOB: {item.fob}
+                      </div>
+                    </div>
+
+                    {/* Card Content & Logistics Specs */}
+                    <div className="p-6 md:p-8">
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent-gold-light transition-colors">
+                        {item.title[lang] || item.title.EN}
+                      </h3>
+                      <p className="text-zinc-400 text-xs leading-relaxed mb-6">
+                        {item.specs[lang] || item.specs.EN}
+                      </p>
+
+                      {/* Trade Logistics Metadata Grid */}
+                      <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-obsidian/80 border border-white/10 text-center font-mono">
+                        <div>
+                          <div className="text-[10px] text-zinc-500 uppercase">{t.catalogMoq}</div>
+                          <div className="text-xs font-bold text-white mt-0.5">{item.moq}</div>
+                        </div>
+                        <div className="border-x border-white/10">
+                          <div className="text-[10px] text-zinc-500 uppercase">{t.catalogLead}</div>
+                          <div className="text-xs font-bold text-accent-emerald mt-0.5">{item.leadTime}</div>
+                        </div>
+                        <div>
+                          <div className="text-[10px] text-zinc-500 uppercase">{t.catalogPort}</div>
+                          <div className="text-xs font-bold text-zinc-300 mt-0.5">{item.port}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Actions Footer */}
+                  <div className="p-6 md:px-8 pt-0 flex flex-col sm:flex-row items-center gap-3 border-t border-white/5 mt-4">
+                    <button
+                      onClick={() => setSelectedCatalogItem(item)}
+                      className="w-full sm:w-1/2 py-3 rounded-xl glass-card text-xs font-semibold text-zinc-300 hover:text-white transition-all text-center"
+                    >
+                      {t.catalogInspect}
+                    </button>
+                    <button
+                      onClick={() => handleOpenRfqForProduct(item)}
+                      className="w-full sm:w-1/2 py-3 rounded-xl btn-gold-glow text-obsidian text-xs font-extrabold text-center tracking-wide"
+                    >
+                      {t.catalogRfq}
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Direct RFQ Callout Bar */}
+            <div className="glass-card p-8 rounded-2xl border-amber-500/30 flex flex-col md:flex-row items-center justify-between gap-6 bg-gradient-to-r from-amber-500/10 via-zinc-card to-obsidian">
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="w-2 h-2 rounded-full bg-accent-emerald animate-ping"></span>
+                  <span className="text-xs font-mono text-accent-gold-light font-bold">CUSTOM B2B SOURCING REQUESTS</span>
+                </div>
+                <h4 className="text-xl font-bold text-white">Need a specific Turkish industrial manufacturer or custom OEM production?</h4>
+                <p className="text-zinc-400 text-xs mt-1">Our multilingual procurement team negotiates direct factory contracts with full QC verification.</p>
+              </div>
+
+              <button
+                onClick={() => {
+                  setRfqProduct('Custom Turkish Sourcing / OEM Project');
+                  setRfqModalOpen(true);
+                }}
+                className="px-8 py-4 rounded-xl btn-gold-glow text-obsidian font-extrabold text-xs tracking-wider whitespace-nowrap shadow-glow-gold uppercase"
+              >
+                Launch Custom RFQ
+              </button>
+            </div>
+
+          </section>
+
+          {/* Contact & Strategy Meeting Section */}
+          <section id="contact" className="py-20 px-4 md:px-8 max-w-5xl mx-auto w-full">
+            <div className="glass-card p-8 md:p-12 text-center relative overflow-hidden border-accent-gold/30 bg-gradient-to-b from-amber-500/10 via-zinc-card to-obsidian">
+              <h2 className="text-3xl md:text-5xl font-extrabold mb-4 text-white">
+                Ready to Elevate Your Global Presence?
+              </h2>
+              <p className="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto mb-8">
+                Schedule a 15-minute strategy session directly with our creative directors to outline your web, motion ad, or export catalog needs.
+              </p>
+
+              <form onSubmit={handleContactSubmit} className="max-w-md mx-auto space-y-4 text-left">
+                {contactSuccess && (
+                  <div className="p-4 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-accent-emerald text-xs font-mono text-center mb-4">
+                    ✓ Strategy session requested! Our executive director will reach out within 4 hours.
+                  </div>
+                )}
+                <div>
+                  <label className="block text-xs font-mono text-zinc-400 mb-1">Your Full Name / Company</label>
+                  <input 
+                    type="text" 
+                    required
+                    value={contactName}
+                    onChange={(e) => setContactName(e.target.value)}
+                    placeholder="e.g. John Doe, Global Trade Inc." 
+                    className="w-full px-4 py-3 rounded-xl bg-obsidian/80 border border-white/10 text-white text-sm focus:outline-none focus:border-accent-gold" 
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-mono text-zinc-400 mb-1">Email or WhatsApp Number</label>
+                  <input 
+                    type="text" 
+                    required
+                    value={contactValue}
+                    onChange={(e) => setContactValue(e.target.value)}
+                    placeholder="e.g. contact@company.com / +90 ..." 
+                    className="w-full px-4 py-3 rounded-xl bg-obsidian/80 border border-white/10 text-white text-sm focus:outline-none focus:border-accent-gold" 
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-mono text-zinc-400 mb-1">Selected Service</label>
+                  <select 
+                    value={contactService}
+                    onChange={(e) => setContactService(e.target.value)}
+                    className="w-full px-4 py-3 rounded-xl bg-obsidian/80 border border-white/10 text-white text-sm focus:outline-none focus:border-accent-gold"
+                  >
+                    <option>Web Design & App Architecture</option>
+                    <option>Video Editing & Meta Ads</option>
+                    <option>Graphic & Brand Identity</option>
+                    <option>Multilingual Turkish Supplier Sourcing</option>
+                    <option>Complete Hybrid Agency Retainer</option>
+                  </select>
+                </div>
+                <button 
+                  type="submit" 
+                  disabled={contactSubmitting}
+                  className={`w-full py-4 rounded-xl font-extrabold text-base shadow-glow-gold hover:opacity-95 transition-all mt-4 uppercase tracking-wider ${
+                    contactSubmitting ? 'bg-zinc-700 text-zinc-400' : 'btn-gold-glow text-obsidian'
+                  }`}
+                >
+                  {contactSubmitting ? 'Dispatching Request...' : t.ctaPrimary}
+                </button>
+              </form>
+            </div>
+          </section>
+
+          {/* Master Footer */}
+          <footer className="mt-auto border-t border-white/10 py-12 px-4 md:px-8 bg-obsidian text-xs text-zinc-500">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-accent-gold text-obsidian font-bold flex items-center justify-center text-sm">
+                  SS
+                </div>
+                <div>
+                  <span className="text-white font-bold text-sm block">SamStudio</span>
+                  <span>{t.taglineFooter}</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-6">
+                <span>EN</span>
+                <span>FR</span>
+                <span>AR</span>
+                <span>TR</span>
+                <span className="text-zinc-600">|</span>
+                <span>© 2026 SamStudio. All rights reserved.</span>
+              </div>
+            </div>
+          </footer>
+
+          {/* --- MODAL 1: Technical Specs & Datasheet Modal --- */}
+          {selectedCatalogItem && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-obsidian/90 backdrop-blur-xl">
+              <div className="glass-card max-w-2xl w-full p-6 md:p-8 relative border-amber-500/40 max-h-[90vh] overflow-y-auto">
+                <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                  <div>
+                    <span className="text-xs font-mono text-accent-gold-light uppercase">TURKISH EXPORT TECHNICAL DATASHEET</span>
+                    <h3 className="text-xl font-bold text-white mt-1">{selectedCatalogItem.title[lang] || selectedCatalogItem.title.EN}</h3>
+                  </div>
+                  <button 
+                    onClick={() => setSelectedCatalogItem(null)}
+                    className="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
+                  >
+                    ✕
+                  </button>
+                </div>
+
+                <div className="rounded-xl overflow-hidden mb-6 h-56 relative">
+                  <img src={selectedCatalogItem.img} className="w-full h-full object-cover" />
+                  <div className="absolute bottom-3 right-3 px-3 py-1 bg-obsidian/90 border border-amber-500/40 text-accent-gold-light font-mono font-bold text-xs rounded-full">
+                    {selectedCatalogItem.hub}
+                  </div>
+                </div>
+
+                <div className="space-y-4 mb-6 text-xs text-zinc-300 leading-relaxed font-mono">
+                  <div className="p-4 rounded-xl bg-obsidian/80 border border-white/10">
+                    <span className="text-accent-gold-light font-bold block mb-1">TECHNICAL SPECIFICATIONS:</span>
+                    <p className="text-zinc-300 font-sans text-sm">{selectedCatalogItem.specs[lang] || selectedCatalogItem.specs.EN}</p>
+                  </div>
+
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div className="p-3 bg-zinc-dark rounded-lg border border-white/5 text-center">
+                      <span className="text-zinc-500 text-[10px] block">MOQ</span>
+                      <span className="font-bold text-white text-xs">{selectedCatalogItem.moq}</span>
+                    </div>
+                    <div className="p-3 bg-zinc-dark rounded-lg border border-white/5 text-center">
+                      <span className="text-zinc-500 text-[10px] block">Lead Time</span>
+                      <span className="font-bold text-accent-emerald text-xs">{selectedCatalogItem.leadTime}</span>
+                    </div>
+                    <div className="p-3 bg-zinc-dark rounded-lg border border-white/5 text-center">
+                      <span className="text-zinc-500 text-[10px] block">Port</span>
+                      <span className="font-bold text-white text-xs">{selectedCatalogItem.port}</span>
+                    </div>
+                    <div className="p-3 bg-zinc-dark rounded-lg border border-white/5 text-center">
+                      <span className="text-zinc-500 text-[10px] block">Est. FOB</span>
+                      <span className="font-bold text-accent-gold-light text-xs">{selectedCatalogItem.fob}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                  <span className="text-xs font-mono text-zinc-500">Direct Factory Partner Contract</span>
+                  <button 
+                    onClick={() => handleOpenRfqForProduct(selectedCatalogItem)}
+                    className="px-6 py-2.5 rounded-lg btn-gold-glow text-obsidian text-xs font-bold uppercase tracking-wider"
+                  >
+                    Proceed to RFQ
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* --- MODAL 2: Interactive RFQ Quotation Engine --- */}
+          {rfqModalOpen && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-obsidian/90 backdrop-blur-xl">
+              <div className="glass-card max-w-xl w-full p-6 md:p-8 relative border-amber-500/40">
+                <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                  <div>
+                    <span className="text-xs font-mono text-accent-gold-light">OFFICIAL TURKISH EXPORT RFQ</span>
+                    <h3 className="text-xl font-bold text-white">{t.rfqModalTitle}</h3>
+                  </div>
+                  <button 
+                    onClick={() => setRfqModalOpen(false)}
+                    className="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
+                  >
+                    ✕
+                  </button>
+                </div>
+
+                <form onSubmit={handleRfqSubmit} className="space-y-4 text-xs font-mono">
+                  <div>
+                    <label className="text-zinc-400 block mb-1 font-bold">{t.rfqProduct}</label>
+                    <input 
+                      type="text" 
+                      value={rfqProduct} 
+                      onChange={(e) => setRfqProduct(e.target.value)} 
+                      className="w-full px-4 py-2.5 rounded-xl bg-obsidian/90 border border-amber-500/30 text-white text-xs focus:outline-none focus:border-accent-gold"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label className="text-zinc-400 block mb-1 font-bold">{t.rfqQuantity}</label>
+                      <input 
+                        type="text" 
+                        value={rfqQty} 
+                        onChange={(e) => setRfqQty(e.target.value)} 
+                        className="w-full px-4 py-2.5 rounded-xl bg-obsidian/90 border border-white/10 text-white text-xs focus:outline-none focus:border-accent-gold"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-zinc-400 block mb-1 font-bold">{t.rfqCountry}</label>
+                      <input 
+                        type="text" 
+                        value={rfqCountry} 
+                        onChange={(e) => setRfqCountry(e.target.value)} 
+                        className="w-full px-4 py-2.5 rounded-xl bg-obsidian/90 border border-white/10 text-white text-xs focus:outline-none focus:border-accent-gold"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-zinc-400 block mb-1 font-bold">Your Email / WhatsApp Phone</label>
+                    <input 
+                      type="text" 
+                      required
+                      placeholder="e.g. procurement@globalfirm.de / +49..." 
+                      value={rfqContact} 
+                      onChange={(e) => setRfqContact(e.target.value)} 
+                      className="w-full px-4 py-2.5 rounded-xl bg-obsidian/90 border border-white/10 text-white text-xs focus:outline-none focus:border-accent-gold"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-zinc-400 block mb-1 font-bold">{t.rfqNotes}</label>
+                    <textarea 
+                      rows="3" 
+                      value={rfqNotes}
+                      onChange={(e) => setRfqNotes(e.target.value)}
+                      placeholder="Specify packaging requirements, target port delivery, or OEM branding..." 
+                      className="w-full px-4 py-2.5 rounded-xl bg-obsidian/90 border border-white/10 text-white text-xs focus:outline-none focus:border-accent-gold resize-none"
+                    ></textarea>
+                  </div>
+
+                  <div className="pt-2">
+                    <button 
+                      type="submit" 
+                      disabled={rfqSubmitted}
+                      className={`w-full py-3.5 rounded-xl font-extrabold text-xs tracking-wider uppercase transition-all duration-300 ${
+                        rfqSubmitted ? 'bg-emerald-500 text-obsidian' : 'btn-gold-glow text-obsidian shadow-glow-gold'
+                      }`}
+                    >
+                      {rfqSubmitted ? '✓ Generating Official RFQ...' : t.rfqSubmit}
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
+
+          {/* --- MODAL 3: Interactive Case Study Modal --- */}
+          {selectedCaseStudy && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-obsidian/90 backdrop-blur-xl">
+              <div className="glass-card max-w-2xl w-full p-6 md:p-8 relative border-accent-violet/40">
+                <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                  <div>
+                    <span className="text-xs font-mono text-accent-violet-glow uppercase">{selectedCaseStudy.tag}</span>
+                    <h3 className="text-xl font-bold text-white mt-1">{selectedCaseStudy.title[lang] || selectedCaseStudy.title.EN}</h3>
+                  </div>
+                  <button 
+                    onClick={() => setSelectedCaseStudy(null)}
+                    className="w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
+                  >
+                    ✕
+                  </button>
+                </div>
+
+                <div className="rounded-xl overflow-hidden mb-6 h-56 relative">
+                  <img src={selectedCaseStudy.img} className="w-full h-full object-cover" />
+                  <div className="absolute bottom-3 right-3 px-3 py-1 bg-obsidian/90 border border-accent-gold/40 text-accent-gold-light font-mono font-bold text-xs rounded-full">
+                    ROI Impact: {selectedCaseStudy.metrics}
+                  </div>
+                </div>
+
+                <p className="text-zinc-300 text-sm leading-relaxed mb-6">
+                  {selectedCaseStudy.desc[lang] || selectedCaseStudy.desc.EN}
+                </p>
+
+                <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                  <span className="text-xs font-mono text-zinc-500">Built with SamStudio Hybrid Pipeline</span>
+                  <a 
+                    href="#contact"
+                    onClick={() => setSelectedCaseStudy(null)}
+                    className="px-5 py-2 rounded-lg btn-gold-glow text-obsidian text-xs font-bold"
+                  >
+                    Request Similar Project
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* --- MODAL 4: Phase 8 Interactive 12-Slide Pitch Deck Viewer --- */}
+          {deckModalOpen && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-obsidian/95 backdrop-blur-2xl">
+              <div className="glass-card max-w-4xl w-full p-6 md:p-10 relative border-accent-gold/40 max-h-[92vh] flex flex-col shadow-2xl">
+                
+                {/* Deck Modal Header */}
+                <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-accent-gold text-obsidian font-extrabold flex items-center justify-center text-xs">
+                      SS
+                    </div>
+                    <div>
+                      <span className="text-[10px] font-mono uppercase tracking-widest text-accent-gold-light">
+                        SAMSTUDIO MASTER STRATEGY DECK
+                      </span>
+                      <h3 className="text-lg md:text-xl font-bold text-white">
+                        {pitchDeckSlides[activeDeckSlide].category}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <span className="hidden sm:inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[11px] font-mono text-zinc-400">
+                      Use ← / → keys
+                    </span>
+                    <button 
+                      onClick={() => setDeckModalOpen(false)}
+                      className="w-9 h-9 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
+                      aria-label="Close Pitch Deck"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                </div>
+
+                {/* 16:9 Volumetric Slide Canvas Viewport */}
+                <div className="flex-1 overflow-y-auto bg-gradient-to-b from-zinc-dark/95 via-obsidian to-obsidian rounded-2xl p-8 md:p-12 border border-white/10 flex flex-col justify-between my-2 min-h-[300px] md:min-h-[360px] relative">
+                  
+                  {/* Slide Ambient Glow */}
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-accent-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="px-3 py-1 rounded-full bg-accent-gold/20 border border-accent-gold/40 text-accent-gold-light font-mono font-bold text-xs">
+                        {pitchDeckSlides[activeDeckSlide].badge}
+                      </span>
+                      <span className="text-3xl sm:text-5xl font-black font-mono text-white/15">
+                        {pitchDeckSlides[activeDeckSlide].num}
+                      </span>
+                    </div>
+
+                    <h4 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-6 leading-tight">
+                      {pitchDeckSlides[activeDeckSlide].title[lang] || pitchDeckSlides[activeDeckSlide].title.EN}
+                    </h4>
+
+                    <p className="text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl">
+                      {pitchDeckSlides[activeDeckSlide].sub[lang] || pitchDeckSlides[activeDeckSlide].sub.EN}
+                    </p>
+                  </div>
+
+                  <div className="pt-6 mt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-mono text-zinc-500">Key Highlight:</span>
+                      <span className="px-3 py-1 rounded-md bg-accent-violet/20 border border-accent-violet/40 text-accent-violet-glow font-mono font-bold text-xs">
+                        {pitchDeckSlides[activeDeckSlide].metric}
+                      </span>
+                    </div>
+
+                    <div className="text-xs font-mono text-zinc-500">
+                      Slide {activeDeckSlide + 1} of {pitchDeckSlides.length}
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Slide Navigation Pagination Bar & Micro Thumbnail Dots */}
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 mt-2 border-t border-white/10">
+                  <div className="flex items-center gap-1.5 overflow-x-auto py-1">
+                    {pitchDeckSlides.map((s, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setActiveDeckSlide(idx)}
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                          activeDeckSlide === idx 
+                            ? 'w-8 bg-accent-gold shadow-glow-gold' 
+                            : 'w-2 bg-white/20 hover:bg-white/40'
+                        }`}
+                        aria-label={`Go to slide ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+                    <button 
+                      disabled={activeDeckSlide === 0}
+                      onClick={() => setActiveDeckSlide(prev => Math.max(0, prev - 1))}
+                      className="px-5 py-2.5 rounded-xl bg-zinc-card border border-white/10 text-xs font-bold text-white disabled:opacity-30 hover:bg-white/10 transition-colors"
+                    >
+                      ← Previous
+                    </button>
+                    <button 
+                      disabled={activeDeckSlide === pitchDeckSlides.length - 1}
+                      onClick={() => setActiveDeckSlide(prev => Math.min(pitchDeckSlides.length - 1, prev + 1))}
+                      className="px-6 py-2.5 rounded-xl btn-gold-glow text-obsidian text-xs font-extrabold disabled:opacity-30 hover:opacity-95 transition-all shadow-glow-gold"
+                    >
+                      Next Slide →
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          )}
+
+        </div>
+      );
+    }
+
+    // Render React Application Root
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
