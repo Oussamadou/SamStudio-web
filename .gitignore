@@ -1,0 +1,35 @@
+# Environment variables & API secrets (Never commit to Git)
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+*.pem
+*.key
+*.cert
+*.secrets
+
+# Cloudflare & Wrangler artifacts
+.wrangler/
+.cloudflare/
+dist/
+.output/
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Operating System & IDE Cache
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local Logs & Diagnostics
+logs/
+*.log
