@@ -51,6 +51,10 @@
             'marquee': 'marquee 25s linear infinite',
             'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             'float': 'float 6s ease-in-out infinite',
+            'wave-1': 'wave 1s ease-in-out infinite alternate',
+            'wave-2': 'wave 1.2s ease-in-out 0.2s infinite alternate',
+            'wave-3': 'wave 0.8s ease-in-out 0.4s infinite alternate',
+            'wave-4': 'wave 1.1s ease-in-out 0.1s infinite alternate',
           },
           keyframes: {
             marquee: {
@@ -60,6 +64,10 @@
             float: {
               '0%, 100%': { transform: 'translateY(0px)' },
               '50%': { transform: 'translateY(-10px)' },
+            },
+            wave: {
+              '0%': { height: '6px' },
+              '100%': { height: '22px' }
             }
           }
         }
@@ -128,6 +136,16 @@
       box-shadow: 0 0 40px rgba(229, 193, 88, 0.55);
       transform: scale(1.03);
     }
+
+    .btn-violet-glow {
+      background: linear-gradient(135deg, #818CF8 0%, #6366F1 100%);
+      box-shadow: 0 0 25px rgba(99, 102, 241, 0.35);
+      transition: all 0.3s var(--ease-awwwards);
+    }
+    .btn-violet-glow:hover {
+      box-shadow: 0 0 40px rgba(99, 102, 241, 0.55);
+      transform: scale(1.03);
+    }
     
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
@@ -156,7 +174,7 @@
 
   <!-- React Application Logic -->
   <script type="text/babel">
-    const { useState, useEffect } = React;
+    const { useState, useEffect, useRef } = React;
 
     // --- Master Multilingual Copy Matrix (EN | FR | AR | TR) ---
     const i18n = {
@@ -175,6 +193,11 @@
         ctaPrimary: 'Schedule Strategy Call',
         ctaSecondary: 'Explore Pitch Deck',
         ctaCatalog: 'View B2B Catalogs',
+        audioBriefingTitle: 'Executive Audio Briefing',
+        audioPlaying: 'Playing Briefing',
+        audioPaused: 'Listen to Strategy Voiceover',
+        audioVoice1: 'Finley (Articulate Anchor)',
+        audioVoice2: 'Executive Presenter',
         stats1Value: '4 Languages',
         stats1Label: 'EN • FR • AR • TR Native',
         stats2Value: '24 Hours',
@@ -195,6 +218,8 @@
         teamBadge: 'STUDIO ARCHITECTURE & AI VISUAL ENGINE',
         teamTitle: 'The Studio & AI Visual Engine',
         teamSub: 'Human craftsmanship augmented by state-of-the-art synthetic visual pipelines.',
+        studioView1: 'Istanbul HQ (Dusk Skyline)',
+        studioView2: 'Active 3D & Code Lab',
         workflowTitle: 'Our 4-Stage Human + AI Pipeline',
         workflowSub: 'How we achieve 10x production speed while elevating luxury standards.',
         promptBoxTitle: 'Interactive AI Production Prompt Lab',
@@ -249,6 +274,11 @@
         ctaPrimary: 'Planifier un Appel Stratégique',
         ctaSecondary: 'Explorer la Présentation',
         ctaCatalog: 'Voir Catalogues B2B',
+        audioBriefingTitle: 'Briefing Audio Exécutif',
+        audioPlaying: 'Lecture en cours',
+        audioPaused: 'Écouter le Briefing Stratégique',
+        audioVoice1: 'Finley (Voix Ancre)',
+        audioVoice2: 'Présentateur Exécutif',
         stats1Value: '4 Langues',
         stats1Label: 'EN • FR • AR • TR Intégré',
         stats2Value: '24 Heures',
@@ -269,6 +299,8 @@
         teamBadge: 'ARCHITECTURE STUDIO & MOTEUR IA',
         teamTitle: 'Le Studio & Moteur Visuel IA',
         teamSub: 'Le savoir-faire humain amplifié par les meilleurs pipelines de génération synthétique.',
+        studioView1: 'QG Istanbul (Vue Nuit)',
+        studioView2: 'Lab 3D & Code Actif',
         workflowTitle: 'Notre Pipeline Hybride Humain + IA',
         workflowSub: 'Comment nous combinons vitesse x10 et standards de luxe sans compromis.',
         promptBoxTitle: 'Laboratoire de Prompts IA Interactif',
@@ -323,6 +355,11 @@
         ctaPrimary: 'حجز مكالمة استراتيجية',
         ctaSecondary: 'العرض التقديمي',
         ctaCatalog: 'استكشاف الكتالوجات',
+        audioBriefingTitle: 'الإيجاز الصوتي التنفيذي',
+        audioPlaying: 'جارٍ الاستماع للإيجاز',
+        audioPaused: 'استمع إلى التعليق الصوتي الاستراتيجي',
+        audioVoice1: 'فينلي (صوت إخباري متزن)',
+        audioVoice2: 'المقدم التنفيذي',
         stats1Value: '4 لغات',
         stats1Label: 'EN • FR • AR • TR أصلي',
         stats2Value: '24 ساعة',
@@ -343,6 +380,8 @@
         teamBadge: 'معمارية الاستوديو ومحرك الذكاء الاصطناعي',
         teamTitle: 'فريق الاستوديو ومحرك التوليد البصري',
         teamSub: 'الإبداع والخبرة البشرية المدعومة بأقوى تقنيات توليد الصور والفيديو بالذكاء الاصطناعي.',
+        studioView1: 'مقر إسطنبول (أفق البوسفور)',
+        studioView2: 'مختبر الثري دي والبرمجة',
         workflowTitle: 'منهجية العمل الهجينة: الإنسان + الذكاء الاصطناعي',
         workflowSub: 'كيف نضاعف سرعة الإنتاج 10 مرات مع الحفاظ على أعلى معايير الفخامة.',
         promptBoxTitle: 'مختبر مطالبات الذكاء الاصطناعي التفاعلي',
@@ -397,6 +436,11 @@
         ctaPrimary: '15 Dk Strateji Randevusu',
         ctaSecondary: 'Ajans Sunum Dosyası',
         ctaCatalog: 'B2B İhracat Kataloğu',
+        audioBriefingTitle: 'Yönetici Sesli Brifingi',
+        audioPlaying: 'Brifing Çalınıyor',
+        audioPaused: 'Strateji Ses Kaydını Dinle',
+        audioVoice1: 'Finley (Haber Spikeri)',
+        audioVoice2: 'Yönetici Sunucu',
         stats1Value: '4 Dil',
         stats1Label: 'EN • FR • AR • TR Entegre',
         stats2Value: '24 Saat',
@@ -417,6 +461,8 @@
         teamBadge: 'STÜDYO MİMARİSİ VE YAPAY ZEKA MOTORU',
         teamTitle: 'Stüdyo Ekibi ve Yapay Zeka Motoru',
         teamSub: 'İleri düzey görsel üretim sistemleriyle güçlendirilmiş usta insan yaratıcılığı.',
+        studioView1: 'İstanbul Merkez (Boğaz Akşamı)',
+        studioView2: 'Canlı 3D & Kod Laboratuvarı',
         workflowTitle: '4 Aşamalı İnsan + Yapay Zeka Sürecimiz',
         workflowSub: 'Lüks standartlardan ödün vermeden 10 kat hızlı üretim nasıl sağlanır?',
         promptBoxTitle: 'Etkileşimli Yapay Zeka İstem Laboratuvarı',
@@ -531,25 +577,29 @@
         desc: { EN: 'Next.js 15, Framer Motion, and Tailwind dashboard engineered for high conversion rates and instantaneous load speeds.', FR: 'Tableau de bord Next.js 15 et Framer Motion conçu pour une conversion maximale.', AR: 'واجهة استخدام مخصصة للشركات ذات الأداء العالي ومعدلات تحويل فائقة.', TR: 'Yüksek dönüşüm ve anlık yükleme hızları için geliştirilmiş Next.js 15 SaaS paneli.' },
         tag: 'Next.js & Tailwind',
         metrics: '+184% Conversion',
-        img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80'
+        img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+        isVideo: false
       },
       {
         id: 'p2',
         category: 'video',
-        title: { EN: 'Kinetic Meta Ad Reel Engine', FR: 'Moteur de Reels Publicitaires Meta', AR: 'محرك الإعلانات الحركية لميتا', TR: 'Kinetik Meta Ads Video Reel' },
-        desc: { EN: 'High-energy typography overlays, speed ramps, and AI subtitle generation optimized for 9:16 vertical TikTok/IG feeds.', FR: 'Séquences dynamiques et typographie cinétique optimisées pour les flux 9:16.', AR: 'إعلانات فيديو سريعة مع نصوص حركة ونصوص توضيحية بذكاء اصطناعي.', TR: 'TikTok ve IG akışları için optimize edilmiş yüksek tempolu kinetik tipografi ve AI altyazı.' },
-        tag: 'Motion & Meta Ads',
+        title: { EN: 'Kinetic 3D Hologram Ad Reel Engine', FR: 'Moteur de Reels Publicitaires Hologramme 3D', AR: 'محرك إعلانات الهولوجرام ثلاثي الأبعاد', TR: '3D Hologram Kinetik Video Reel Motoru' },
+        desc: { EN: '3D camera orbit around glowing holographic device with particle dust trails, dynamic dark glassmorphism, and 60fps physics motion.', FR: 'Séquences 3D cinématiques et particules lumineuses optimisées pour les flux publicitaires haute conversion.', AR: 'إعلان حركة ثلاثي الأبعاد لكاميرا تدور حول مجسم هولوجرام مضيء مع تأثيرات ضوئية مذهلة.', TR: 'Kinetik tipografi, 3D kamera hareketi ve parçacık efektleriyle üretilmiş Meta/TikTok video reklam kurgusu.' },
+        tag: 'Runway & Luma 3D Video',
         metrics: '3.4x ROAS Yield',
-        img: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80'
+        videoSrc: './assets/videos/motion_reel_hologram.mp4',
+        img: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80',
+        isVideo: true
       },
       {
         id: 'p3',
         category: 'ai',
-        title: { EN: 'Luxury Packaging Photorealistic Render', FR: 'Rendu Photoréaliste d\'Emballage Luxe', AR: 'تغليف فاخر متولد بالذكاء الاصطناعي', TR: 'Lüks Ambalaj Yapay Zeka Render' },
-        desc: { EN: 'Generated using Midjourney v6 & Flux.1 pipelines with gold foil stamping physics and macro studio light setup.', FR: 'Généré avec Midjourney v6 pour un rendu d\'emballage haut de gamme.', AR: 'توليد صوري بدقة فائقة وإضاءة استوديو ثلاثية الأبعاد باستخدام أفضل المحركات.', TR: 'Midjourney v6 ve Flux.1 ile üretilmiş altın varak baskılı studio kalite ambalaj görseli.' },
+        title: { EN: 'Luxury Rigid Packaging Photorealistic Render', FR: 'Rendu Photoréaliste d\'Emballage Luxe', AR: 'تغليف التصدير الفاخر بالذكاء الاصطناعي', TR: 'Lüks Mukavva Ambalaj Yapay Zeka Render' },
+        desc: { EN: 'Generated using Midjourney v6 & Flux.1: obsidian matte rigid box with metallic gold foil stamping, surrounded by raw organic cotton and precision-machined aluminum parts.', FR: 'Généré avec Midjourney v6 pour un rendu d\'emballage haut de gamme avec dorure à chaud et métaux usinés.', AR: 'صورة استوديو احترافية لتغليف صلب فاخر مع طباعة رقائق الذهب وقطع ألمنيوم مصنعة بدقة CNC.', TR: 'Midjourney v6 ve Flux.1 ile üretilmiş altın varak baskılı mat siyah lüks ihracat kutusu ve CNC alüminyum parçalar.' },
         tag: 'Midjourney v6 & Flux.1',
         metrics: '24h Delivery',
-        img: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80'
+        img: './assets/images/packaging_premium_box.png',
+        isVideo: false
       },
       {
         id: 'p4',
@@ -558,25 +608,28 @@
         desc: { EN: '4-Language interactive PDF & web presentation kit connecting Bursa CNC factory lines directly to European buyers.', FR: 'Kit B2B en 4 langues connectant les usines turques aux acheteurs européens.', AR: 'كتالوج تفاعلي بـ 4 لغات لربط مصانع الآلات التركية بالمشترين في أوروبا والخليج.', TR: 'Bursa sanayi üreticilerini Avrupa ve Körfez alıcılarıyla buluşturan 4 dilli dijital katalog.' },
         tag: 'B2B Sourcing Bridge',
         metrics: '$1.2M RFQ Volume',
-        img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80'
+        img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
+        isVideo: false
       },
       {
         id: 'p5',
+        category: 'ai',
+        title: { EN: 'Biocrown Floating Luxury Packaging 3D', FR: 'Packaging Luxe Flottant Biocrown 3D', AR: 'تغليف بيوكراون العائم ثلاثي الأبعاد', TR: 'Biocrown Havada Süzülen Lüks Kutu 3D' },
+        desc: { EN: 'Dynamic 3D synthetic visual with floating gold foil embossed trees, levitating steel gears, and organic woven linen.', FR: 'Visuel de synthèse 3D dynamique avec dorure or et composants en lévitation.', AR: 'تصميم ثلاثي الأبعاد مبتكر مع مكونات طافية وطباعة ذهبية بارزة لشجرة الطبيعة.', TR: 'Altın varak ağaç kabartmalı, havada süzülen metal dişliler ve doğal keten kumaşlı 3D render.' },
+        tag: 'AI Brand Synthetic',
+        metrics: 'Zero Studio Overhead',
+        img: './assets/images/packaging_biocrown_3d.jpg',
+        isVideo: false
+      },
+      {
+        id: 'p6',
         category: 'web',
         title: { EN: 'Lumière Organic E-Commerce Store', FR: 'Boutique E-Commerce Bio Lumière', AR: 'متجر لوميير الإلكتروني العضوي', TR: 'Lumière Organik E-Ticaret Web Sitesi' },
         desc: { EN: 'Glassmorphic responsive checkout UX with dynamic multi-currency display and localized Arabic/English support.', FR: 'UX de paiement réactif avec prise en charge multidevises et bilingue.', AR: 'تجربة تسوق سلسة مع تحويل فوري للعملات وتصميم متناسق بالكامل.', TR: 'Çoklu para birimi ve Türkçe/İngilizce dil desteği olan glassmorphism e-ticaret arayüzü.' },
         tag: 'E-Commerce UX',
         metrics: '0.4s Page Load',
-        img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80'
-      },
-      {
-        id: 'p6',
-        category: 'ai',
-        title: { EN: 'Synthetic Apparel Brand Campaign', FR: 'Campagne de Marque de Mode Synthétique', AR: 'حملة أزياء مصممة بالذكاء الاصطناعي', TR: 'Yapay Zeka Hazır Giyim Kampanyası' },
-        desc: { EN: 'Full studio campaign photography created without physical models or location shoots using Luma & Midjourney.', FR: 'Campagne complète créée sans modèles physiques grâce à la synthèse visuelle IA.', AR: 'إنتاج بصرية كامل للعلامة التجارية بدون مصورين أو عارضين أزياء بفضل الذكاء الاصطناعي.', TR: 'Fiziksel stüdyo ve manken kullanmadan Luma ve Midjourney ile üretilmiş tekstil kampanyası.' },
-        tag: 'AI Brand Synthetic',
-        metrics: '-80% Asset Cost',
-        img: 'https://images.unsplash.com/photo-1528458909336-e7a0adfac005?auto=format&fit=crop&w=800&q=80'
+        img: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80',
+        isVideo: false
       }
     ];
 
@@ -707,6 +760,29 @@
     // --- Phase 7: Turkish B2B Export Catalog Items Data ---
     const catalogItemsData = [
       {
+        id: 'packaging',
+        title: {
+          EN: 'Luxury Rigid Export Boxes & Foil Stamping',
+          FR: 'Boîtes Rigides de Luxe & Dorure à Chaud',
+          AR: 'علب تغليف فاخرة صلبة مع طباعة رقائق الذهب',
+          TR: 'Lüks Mukavva İhracat Kutusu & Varak Baskı'
+        },
+        category: 'packaging',
+        hub: 'Istanbul Packaging Cluster',
+        moq: '1,000 Units',
+        leadTime: '12 Days',
+        port: 'Ambarlı / Istanbul',
+        fob: '$1.40 - $3.60 / unit',
+        specs: {
+          EN: '1200gsm greyboard, magnetic closure, soft-touch matte lamination, hot foil stamping in gold/silver, 100% FSC certified recyclable.',
+          FR: 'Carton 1200g, fermeture magnétique, pelliculage mat soft-touch, marquage à chaud or/argent, 100% certifié FSC recyclable.',
+          AR: 'كرتون مقوى 1200 جم، إغلاق مغناطيسي، ملمس مخملي غير لامع، بصمة ذهبية وفضية حرارية، شهادة استدامة FSC 100%.',
+          TR: '1200gr mukavva, mıknatıslı kapak, soft-touch mat laminasyon, altın/gümüş sıcak varak baskı, %100 FSC sertifikalı geri dönüştürülebilir.'
+        },
+        img: './assets/images/packaging_premium_box.png',
+        badge: 'Featured Luxury'
+      },
+      {
         id: 'cnc',
         title: {
           EN: 'High-Precision 5-Axis CNC Milling Machinery',
@@ -728,29 +804,6 @@
         },
         img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80',
         badge: 'Heavy Industry'
-      },
-      {
-        id: 'packaging',
-        title: {
-          EN: 'Luxury Rigid Export Boxes & Foil Stamping',
-          FR: 'Boîtes Rigides de Luxe & Dorure à Chaud',
-          AR: 'علب تغليف فاخرة صلبة مع طباعة رقائق الذهب',
-          TR: 'Lüks Mukavva İhracat Kutusu & Varak Baskı'
-        },
-        category: 'packaging',
-        hub: 'Istanbul Packaging Cluster',
-        moq: '1,000 Units',
-        leadTime: '12 Days',
-        port: 'Ambarlı / Istanbul',
-        fob: '$1.40 - $3.60 / unit',
-        specs: {
-          EN: '1200gsm greyboard, magnetic closure, soft-touch matte lamination, hot foil stamping in gold/silver, 100% FSC certified recyclable.',
-          FR: 'Carton 1200g, fermeture magnétique, pelliculage mat soft-touch, marquage à chaud or/argent, 100% certifié FSC recyclable.',
-          AR: 'كرتون مقوى 1200 جم، إغلاق مغناطيسي، ملمس مخملي غير لامع، بصمة ذهبية وفضية حرارية، شهادة استدامة FSC 100%.',
-          TR: '1200gr mukavva, mıknatıslı kapak, soft-touch mat laminasyon, altın/gümüş sıcak varak baskı, %100 FSC sertifikalı geri dönüştürülebilir.'
-        },
-        img: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=800&q=80',
-        badge: 'Luxury Packaging'
       },
       {
         id: 'textile',
@@ -1031,6 +1084,14 @@
       const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
       const [activePromptTab, setActivePromptTab] = useState('team');
       const [mobileNavOpen, setMobileNavOpen] = useState(false);
+      const [studioView, setStudioView] = useState('dusk'); // 'dusk' or 'lab'
+      const [activeVideoModal, setActiveVideoModal] = useState(null);
+
+      // Audio Briefing Player States
+      const [isPlayingAudio, setIsPlayingAudio] = useState(false);
+      const [audioVoice, setAudioVoice] = useState('anchor'); // 'anchor' or 'executive'
+      const [audioProgress, setAudioProgress] = useState(0);
+      const audioRef = useRef(null);
       
       // Phase 7 & 8 States
       const [selectedCatalogItem, setSelectedCatalogItem] = useState(null);
@@ -1080,6 +1141,35 @@
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
       }, [deckModalOpen]);
+
+      // Audio Player Handlers
+      const toggleAudioPlayback = () => {
+        if (!audioRef.current) return;
+        if (isPlayingAudio) {
+          audioRef.current.pause();
+          setIsPlayingAudio(false);
+        } else {
+          audioRef.current.play();
+          setIsPlayingAudio(true);
+        }
+      };
+
+      const handleAudioTimeUpdate = () => {
+        if (audioRef.current) {
+          const current = audioRef.current.currentTime;
+          const duration = audioRef.current.duration || 30;
+          setAudioProgress((current / duration) * 100);
+        }
+      };
+
+      const handleAudioEnded = () => {
+        setIsPlayingAudio(false);
+        setAudioProgress(0);
+      };
+
+      const currentAudioSrc = audioVoice === 'anchor' 
+        ? './assets/audio/briefing_anchor_en.mp3' 
+        : './assets/audio/briefing_executive.mp3';
 
       const currentPromptObj = aiPromptsLibrary.find(p => p.id === activePromptTab) || aiPromptsLibrary[0];
 
@@ -1159,6 +1249,14 @@
       return (
         <div className="min-h-screen flex flex-col bg-obsidian text-zinc-100 bg-grid-pattern relative overflow-x-hidden">
           
+          {/* Hidden Native Audio Element */}
+          <audio 
+            ref={audioRef} 
+            src={currentAudioSrc} 
+            onTimeUpdate={handleAudioTimeUpdate} 
+            onEnded={handleAudioEnded}
+          />
+
           {/* Volumetric Ambient Mesh Glows */}
           <div className="fixed top-0 left-1/4 w-[600px] h-[600px] bg-accent-violet/10 rounded-full blur-[150px] pointer-events-none animate-pulse-slow"></div>
           <div className="fixed top-1/3 right-10 w-[500px] h-[500px] bg-accent-gold/10 rounded-full blur-[160px] pointer-events-none"></div>
@@ -1296,16 +1394,16 @@
           </header>
 
           {/* --- HERO SECTION CANVAS --- */}
-          <section className="relative pt-16 pb-20 md:pt-24 md:pb-28 px-4 md:px-8 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
+          <section className="relative pt-12 pb-20 md:pt-20 md:pb-28 px-4 md:px-8 max-w-7xl mx-auto w-full flex flex-col items-center text-center">
             
             {/* Top Kinetic Agency Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-amber-500/30 text-accent-gold-light text-xs font-mono tracking-widest mb-8 shadow-inner animate-float">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 border border-amber-500/30 text-accent-gold-light text-xs font-mono tracking-widest mb-6 shadow-inner animate-float">
               <span className="w-2.5 h-2.5 rounded-full bg-accent-gold animate-ping"></span>
               <span>{t.heroBadge}</span>
             </div>
 
             {/* Kinetic Hero Main Headline */}
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight max-w-6xl leading-[1.08] mb-8">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight max-w-6xl leading-[1.08] mb-6">
               {lang === 'AR' ? (
                 <span className="text-gradient-gold">{t.heroTitle1} {t.heroTitle2}</span>
               ) : (
@@ -1316,9 +1414,66 @@
             </h1>
 
             {/* Subhead Narrative */}
-            <p className="text-base sm:text-xl text-zinc-300 max-w-3xl font-normal leading-relaxed mb-12">
+            <p className="text-base sm:text-xl text-zinc-300 max-w-3xl font-normal leading-relaxed mb-8">
               {t.heroSub}
             </p>
+
+            {/* --- REAL-TIME ELEVENLABS AUDIO BRIEFING PLAYER BAR --- */}
+            <div className="w-full max-w-2xl glass-card p-4 rounded-2xl border-accent-gold/40 mb-10 flex flex-col sm:flex-row items-center justify-between gap-4 bg-gradient-to-r from-amber-500/10 via-zinc-card/90 to-indigo-500/10 shadow-2xl">
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={toggleAudioPlayback}
+                  className={`w-12 h-12 rounded-full flex items-center justify-center text-obsidian font-black text-lg transition-all duration-300 shadow-glow-gold ${
+                    isPlayingAudio ? 'bg-emerald-400 scale-105' : 'btn-gold-glow'
+                  }`}
+                  aria-label="Toggle Audio Briefing"
+                >
+                  {isPlayingAudio ? '⏸' : '▶'}
+                </button>
+
+                <div className="text-left">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-bold text-white tracking-wide">{t.audioBriefingTitle}</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-accent-gold/20 text-accent-gold-light border border-amber-500/30 font-mono">
+                      ElevenLabs 48kHz
+                    </span>
+                  </div>
+                  <span className="text-[11px] text-zinc-400 font-mono">
+                    {isPlayingAudio ? t.audioPlaying : t.audioPaused}
+                  </span>
+                </div>
+              </div>
+
+              {/* Dynamic Sound Waveform Visualizer */}
+              <div className="flex items-center gap-1.5 h-6">
+                <span className={`w-1 bg-accent-gold rounded-full ${isPlayingAudio ? 'animate-wave-1' : 'h-1.5'}`}></span>
+                <span className={`w-1 bg-accent-violet rounded-full ${isPlayingAudio ? 'animate-wave-2' : 'h-3'}`}></span>
+                <span className={`w-1 bg-accent-gold-light rounded-full ${isPlayingAudio ? 'animate-wave-3' : 'h-2'}`}></span>
+                <span className={`w-1 bg-accent-cyan rounded-full ${isPlayingAudio ? 'animate-wave-4' : 'h-4'}`}></span>
+                <span className={`w-1 bg-accent-emerald rounded-full ${isPlayingAudio ? 'animate-wave-1' : 'h-2'}`}></span>
+                <span className={`w-1 bg-accent-violet-glow rounded-full ${isPlayingAudio ? 'animate-wave-3' : 'h-3.5'}`}></span>
+              </div>
+
+              {/* Track Voice Selector */}
+              <div className="flex items-center bg-obsidian/80 rounded-xl p-1 border border-white/10 text-[10px] font-mono">
+                <button
+                  onClick={() => { setAudioVoice('anchor'); setIsPlayingAudio(false); }}
+                  className={`px-2.5 py-1 rounded-lg transition-all ${
+                    audioVoice === 'anchor' ? 'bg-accent-violet text-white font-bold' : 'text-zinc-400 hover:text-white'
+                  }`}
+                >
+                  Voice 1
+                </button>
+                <button
+                  onClick={() => { setAudioVoice('executive'); setIsPlayingAudio(false); }}
+                  className={`px-2.5 py-1 rounded-lg transition-all ${
+                    audioVoice === 'executive' ? 'bg-accent-gold text-obsidian font-bold' : 'text-zinc-400 hover:text-white'
+                  }`}
+                >
+                  Voice 2
+                </button>
+              </div>
+            </div>
 
             {/* CTA Button Group */}
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-16">
@@ -1336,7 +1491,7 @@
                 <span>{t.ctaSecondary}</span>
               </button>
               <a 
-                href="#catalog"
+                href="#catalog" 
                 className="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-accent-gold-light font-semibold hover:border-accent-gold/50 transition-all text-sm flex items-center justify-center gap-2"
               >
                 <span>🚢</span>
@@ -1378,7 +1533,7 @@
             </div>
           </div>
 
-          {/* Services Matrix Preview Section */}
+          {/* Services Matrix Section */}
           <section id="services" className="py-20 px-4 md:px-8 max-w-7xl mx-auto w-full">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl md:text-5xl font-extrabold mb-4">{t.servicesTitle}</h2>
@@ -1459,13 +1614,24 @@
                   onClick={() => setSelectedCaseStudy(item)}
                 >
                   {/* Card Media Preview Frame */}
-                  <div className="h-56 overflow-hidden relative">
-                    <img 
-                      src={item.img} 
-                      alt={item.title[lang] || item.title.EN} 
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent opacity-80"></div>
+                  <div className="h-60 overflow-hidden relative bg-black">
+                    {item.isVideo ? (
+                      <video 
+                        src={item.videoSrc} 
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-95"
+                      />
+                    ) : (
+                      <img 
+                        src={item.img} 
+                        alt={item.title[lang] || item.title.EN} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent opacity-80 pointer-events-none"></div>
                     
                     <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-obsidian/80 backdrop-blur-md text-[10px] font-mono text-white border border-white/10">
                       {item.tag}
@@ -1474,6 +1640,14 @@
                     <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-accent-gold/20 backdrop-blur-md text-[11px] font-mono font-bold text-accent-gold-light border border-accent-gold/40">
                       {item.metrics}
                     </div>
+
+                    {item.isVideo && (
+                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div className="w-12 h-12 rounded-full bg-accent-violet/80 backdrop-blur-md border border-white/20 flex items-center justify-center text-white text-lg shadow-glow-violet">
+                          ▶
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* Card Description */}
@@ -1488,7 +1662,7 @@
                     </div>
 
                     <div className="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-accent-violet-glow group-hover:text-white transition-colors">
-                      <span>Explore Showcase</span>
+                      <span>{item.isVideo ? 'Play Full 3D Motion Reel' : 'Explore Showcase'}</span>
                       <span>→</span>
                     </div>
                   </div>
@@ -1542,34 +1716,59 @@
               </div>
             </div>
 
-            {/* Studio HQ Visual Frame & Live AI Prompt Lab */}
+            {/* Real Studio HQ Visual Frame & Live AI Prompt Lab */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
               
-              {/* Studio HQ Photography Frame */}
-              <div className="lg:col-span-5 relative rounded-2xl overflow-hidden border border-white/10 group shadow-2xl min-h-[380px] flex flex-col justify-end">
+              {/* Studio HQ Photography Frame with Interactive View Switcher */}
+              <div className="lg:col-span-6 relative rounded-2xl overflow-hidden border border-white/10 group shadow-2xl min-h-[420px] flex flex-col justify-between bg-black">
                 <img 
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" 
+                  src={studioView === 'dusk' ? './assets/images/studio_hq_dusk.png' : './assets/images/studio_team_lab.jpg'} 
                   alt="SamStudio Istanbul HQ Collaboration Workspace" 
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-90 contrast-105"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-95"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent pointer-events-none"></div>
                 
+                {/* Top View Toggle Switch */}
+                <div className="relative p-4 flex items-center justify-between">
+                  <div className="flex items-center gap-1.5 p-1 rounded-full bg-obsidian/85 backdrop-blur-md border border-white/15 text-[11px] font-mono">
+                    <button 
+                      onClick={() => setStudioView('dusk')}
+                      className={`px-3 py-1 rounded-full transition-all ${
+                        studioView === 'dusk' ? 'bg-accent-gold text-obsidian font-bold shadow-glow-gold' : 'text-zinc-400 hover:text-white'
+                      }`}
+                    >
+                      {t.studioView1}
+                    </button>
+                    <button 
+                      onClick={() => setStudioView('lab')}
+                      className={`px-3 py-1 rounded-full transition-all ${
+                        studioView === 'lab' ? 'bg-accent-violet text-white font-bold shadow-glow-violet' : 'text-zinc-400 hover:text-white'
+                      }`}
+                    >
+                      {t.studioView2}
+                    </button>
+                  </div>
+
+                  <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 backdrop-blur-md">
+                    <span className="w-2 h-2 rounded-full bg-accent-emerald animate-ping"></span>
+                    <span className="text-[10px] text-accent-emerald font-mono font-bold">UTC+3 Live</span>
+                  </div>
+                </div>
+
+                {/* Bottom Studio Info Card */}
                 <div className="relative p-6 bg-obsidian/85 backdrop-blur-md border-t border-white/10 m-4 rounded-xl">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-white font-extrabold text-sm tracking-wide">Istanbul Studio HQ</span>
-                    <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40">
-                      <span className="w-2 h-2 rounded-full bg-accent-emerald animate-ping"></span>
-                      <span className="text-[10px] text-accent-emerald font-mono font-bold">UTC+3 Live</span>
-                    </div>
+                    <span className="text-[10px] font-mono text-accent-gold-light">Midjourney v6 Real Photo</span>
                   </div>
-                  <p className="text-zinc-400 text-xs leading-relaxed">
-                    Multidisciplinary creative directors, software engineers, and motion specialists collaborating in real time.
+                  <p className="text-zinc-300 text-xs leading-relaxed">
+                    Multidisciplinary creative directors, software engineers, and motion specialists collaborating in real time overlooking the Bosphorus.
                   </p>
                 </div>
               </div>
 
               {/* Interactive AI Prompt Engineering Lab */}
-              <div className="lg:col-span-7 glass-card p-6 md:p-8 flex flex-col justify-between border-accent-gold/30 bg-gradient-to-b from-amber-500/5 via-zinc-card/90 to-obsidian">
+              <div className="lg:col-span-6 glass-card p-6 md:p-8 flex flex-col justify-between border-accent-gold/30 bg-gradient-to-b from-amber-500/5 via-zinc-card/90 to-obsidian">
                 <div>
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                     <div>
@@ -1715,11 +1914,11 @@
                 >
                   <div>
                     {/* Media Preview Frame */}
-                    <div className="h-64 overflow-hidden relative">
+                    <div className="h-72 overflow-hidden relative bg-black">
                       <img 
                         src={item.img} 
                         alt={item.title[lang] || item.title.EN} 
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out brightness-90"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out brightness-95"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent"></div>
 
@@ -1913,7 +2112,7 @@
                   </button>
                 </div>
 
-                <div className="rounded-xl overflow-hidden mb-6 h-56 relative">
+                <div className="rounded-xl overflow-hidden mb-6 h-64 relative bg-black">
                   <img src={selectedCatalogItem.img} className="w-full h-full object-cover" />
                   <div className="absolute bottom-3 right-3 px-3 py-1 bg-obsidian/90 border border-amber-500/40 text-accent-gold-light font-mono font-bold text-xs rounded-full">
                     {selectedCatalogItem.hub}
@@ -2047,9 +2246,9 @@
             </div>
           )}
 
-          {/* --- MODAL 3: Interactive Case Study Modal --- */}
+          {/* --- MODAL 3: Interactive Case Study / Video Reel Lightbox Modal --- */}
           {selectedCaseStudy && (
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-obsidian/90 backdrop-blur-xl">
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-obsidian/95 backdrop-blur-2xl">
               <div className="glass-card max-w-2xl w-full p-6 md:p-8 relative border-accent-violet/40">
                 <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
                   <div>
@@ -2064,8 +2263,17 @@
                   </button>
                 </div>
 
-                <div className="rounded-xl overflow-hidden mb-6 h-56 relative">
-                  <img src={selectedCaseStudy.img} className="w-full h-full object-cover" />
+                <div className="rounded-xl overflow-hidden mb-6 h-72 relative bg-black flex items-center justify-center">
+                  {selectedCaseStudy.isVideo ? (
+                    <video 
+                      src={selectedCaseStudy.videoSrc} 
+                      controls 
+                      autoPlay 
+                      className="w-full h-full object-contain"
+                    />
+                  ) : (
+                    <img src={selectedCaseStudy.img} className="w-full h-full object-cover" />
+                  )}
                   <div className="absolute bottom-3 right-3 px-3 py-1 bg-obsidian/90 border border-accent-gold/40 text-accent-gold-light font-mono font-bold text-xs rounded-full">
                     ROI Impact: {selectedCaseStudy.metrics}
                   </div>
