@@ -141,25 +141,41 @@
       transform: scale(0.98);
     }
 
-    /* Modern CSS Scroll-Driven Reveal Animations (Reference Video Architecture) */
-    @keyframes scrollReveal {
+    /* --- Pure CSS Scroll-Driven Animations (No JS Required) --- */
+    @keyframes scrollFadeUp {
       from {
         opacity: 0;
-        transform: translateY(20px) scale(0.99);
+        transform: translateY(50px) scale(0.96);
+        filter: blur(6px);
       }
       to {
         opacity: 1;
         transform: translateY(0) scale(1);
+        filter: blur(0px);
       }
     }
 
-    .scroll-reveal {
-      animation: scrollReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    @keyframes scrollScaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
+    /* Fallback & Native Browser Scroll Timeline Support */
     @supports (animation-timeline: view()) {
-      .scroll-driven {
-        animation: scrollReveal linear both;
+      .scroll-reveal {
+        animation: scrollFadeUp linear both;
+        animation-timeline: view();
+        animation-range: entry 15% cover 35%;
+      }
+
+      .scroll-scale {
+        animation: scrollScaleIn linear both;
         animation-timeline: view();
         animation-range: entry 10% cover 30%;
       }
@@ -272,6 +288,11 @@
         pitchDeckSub: 'Explore our agency strategy, ROI models, and global reach.',
         closeBtn: 'Close',
         viewDeckBtn: 'Open Pitch Deck',
+        promptTerminalBadge: 'AI SYNTHESIS & PROMPT PIPELINE',
+        promptTerminalTitle: 'Interactive AI Production Terminal',
+        promptTerminalSub: 'Explore the exact production-grade generative prompts and synthetic parameters powering our 24-hour turnaround.',
+        copyPromptBtn: 'Copy Production Prompt',
+        copiedPromptBtn: '✓ Copied to Clipboard!',
         activeLang: 'EN',
         taglineFooter: 'Connecting Turkish industrial power to global markets with design precision.',
         tickerItems: [
@@ -349,6 +370,11 @@
         pitchDeckSub: 'Découvrez notre modèle stratégique et notre portée internationale.',
         closeBtn: 'Fermer',
         viewDeckBtn: 'Voir la Présentation',
+        promptTerminalBadge: 'PIPELINE PROMPT & SYNTHÈSE IA',
+        promptTerminalTitle: 'Terminal de Production IA Interactif',
+        promptTerminalSub: 'Découvrez les prompts de production et paramètres de synthèse permettant notre livraison en 24h.',
+        copyPromptBtn: 'Copier le Prompt',
+        copiedPromptBtn: '✓ Copié dans le Presse-papier !',
         activeLang: 'FR',
         taglineFooter: 'Relier l\'industrie turque aux marchés mondiaux avec précision.',
         tickerItems: [
@@ -426,6 +452,11 @@
         pitchDeckSub: 'استكشف استراتيجيتنا ونموذج القيمة المضافة.',
         closeBtn: 'إغلاق',
         viewDeckBtn: 'فتح العرض التقديمي',
+        promptTerminalBadge: 'محرك ونماذج التوليد بالذكاء الاصطناعي',
+        promptTerminalTitle: 'منصة أوامر التوليد البصري والإنتاج',
+        promptTerminalSub: 'استكشف أوامر ومحددات التوليد البصري الاحترافية التي تمكننا من إنجاز المشاريع في 24 ساعة فقط.',
+        copyPromptBtn: 'نسخ الأمر الإنتاجي',
+        copiedPromptBtn: '✓ تم النسخ بنجاح!',
         activeLang: 'AR',
         taglineFooter: 'ربط الصناعة التركية بالأسواق العالمية بدقة وتصميم فاخر.',
         tickerItems: [
@@ -503,6 +534,11 @@
         pitchDeckSub: '12 slaytlık ajans mimarimizi ve iş modelimizi inceleyin.',
         closeBtn: 'Kapat',
         viewDeckBtn: 'Sunumu İncele',
+        promptTerminalBadge: 'YAPAY ZEKA GÖRSEL VE PROMPT TERMİNALİ',
+        promptTerminalTitle: 'Etkileşimli Yapay Zeka Üretim Terminali',
+        promptTerminalSub: '24 saatte hızlı teslimat sağlayan endüstri standardı yapay zeka promptlarını ve parametrelerini inceleyin.',
+        copyPromptBtn: 'Promptu Kopyala',
+        copiedPromptBtn: '✓ Panoya Kopyalandı!',
         activeLang: 'TR',
         taglineFooter: 'Türkiye\'nin üretim gücünü estetik ve teknolojiyle dünyaya taşıyoruz.',
         tickerItems: [
@@ -1021,6 +1057,42 @@
       }
     ];
 
+    // --- Master AI Production Prompts Data ---
+    const aiPromptsData = [
+      {
+        id: 'midjourney_team',
+        label: 'Studio HQ Visual',
+        tool: 'Midjourney v6.0',
+        badge: 'Photo Lab',
+        aspect: '--ar 16:9 --v 6.0 --style raw',
+        prompt: '/imagine prompt: Ultra-realistic cinematic photography of a multidisciplinary creative technology studio in Istanbul overlooking the Bosphorus at dusk. Three diverse creative directors and software engineers collaborating around a minimalist obsidian oak conference table with glowing OLED displays showing 3D wireframes. Warm tungsten and subtle violet ambient rim lighting, 35mm lens, f/1.8 aperture, photorealistic, 8k resolution --ar 16:9 --style raw'
+      },
+      {
+        id: 'packaging_cad',
+        label: 'Luxury Packaging CAD',
+        tool: 'Midjourney v6 / Flux.1',
+        badge: 'Product 3D',
+        aspect: '--ar 4:3 --v 6.0 --s 250',
+        prompt: '/imagine prompt: Photorealistic commercial product render of an obsidian black luxury rigid export box with metallic gold hot-foil embossed tree emblem and precision debossed typography. The packaging box sits open on an architectural polished dark slate surface, with natural Aegean raw unspun cotton fibers and CNC-machined brass parts in the background. Soft cinematic studio spotlighting, crisp metallic reflections, 8k --ar 4:3'
+      },
+      {
+        id: 'motion_reel',
+        label: '3D Motion Hologram',
+        tool: 'Runway Gen-3 / Luma',
+        badge: 'Motion Reel',
+        aspect: '9:16 Video (60fps Physics)',
+        prompt: 'Cinematic 3D camera 360-degree orbit around an ultra-thin glowing holographic handheld device floating against a dark obsidian glass grid backdrop. The hologram displays real-time animated global trade data and kinetic typography. Microscopic floating gold particle dust trails, volumetric lighting, 60fps fluid physics, premium luxury tech commercial aesthetics.'
+      },
+      {
+        id: 'elevenlabs_script',
+        label: 'ElevenLabs Voice Script',
+        tool: 'ElevenLabs v2',
+        badge: 'Audio Broadcast',
+        aspect: '48kHz Ultra-HD Broadcast',
+        prompt: 'SamStudio bridges Turkish industrial manufacturing with global creative excellence. From high-performance Next.js web applications and 3D motion ads to direct verified factory export sourcing in English, French, Arabic, and Turkish — we deliver world-class deliverables with 24-hour turnaround speed.'
+      }
+    ];
+
     // --- Main React Application Component ---
     function App() {
       const [lang, setLang] = useState('EN');
@@ -1031,6 +1103,8 @@
       const [selectedCaseStudy, setSelectedCaseStudy] = useState(null);
       const [mobileNavOpen, setMobileNavOpen] = useState(false);
       const [studioView, setStudioView] = useState('dusk');
+      const [activePromptTab, setActivePromptTab] = useState('midjourney_team');
+      const [copiedPrompt, setCopiedPrompt] = useState(false);
 
       // Audio Briefing Player States
       const [isPlayingAudio, setIsPlayingAudio] = useState(false);
@@ -1465,9 +1539,9 @@
           </div>
 
           {/* Services Matrix Section */}
-          <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto w-full scroll-driven">
+          <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto w-full">
             <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-              <h2 className="text-2xl sm:text-4xl font-extrabold mb-3 text-white">{t.servicesTitle}</h2>
+              <h2 className="text-2xl sm:text-4xl font-extrabold mb-3 text-white scroll-scale">{t.servicesTitle}</h2>
               <p className="text-zinc-400 text-xs sm:text-sm">{t.servicesSub}</p>
             </div>
 
@@ -1475,7 +1549,7 @@
               {servicesData.map((s) => (
                 <div 
                   key={s.id}
-                  className={`glass-card p-6 sm:p-7 flex flex-col justify-between group relative overflow-hidden bg-gradient-to-b ${s.color}`}
+                  className={`glass-card scroll-reveal p-6 sm:p-7 flex flex-col justify-between group relative overflow-hidden bg-gradient-to-b ${s.color}`}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-5">
@@ -1504,12 +1578,12 @@
           </section>
 
           {/* --- WORK SHOWCASE PORTFOLIO --- */}
-          <section id="portfolio" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto w-full scroll-driven">
+          <section id="portfolio" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto w-full">
             <div className="text-center max-w-2xl mx-auto mb-10">
               <div className="inline-block px-3 py-1 rounded-full bg-accent-violet/20 border border-accent-violet/40 text-accent-violet-glow text-[10px] font-mono mb-2">
                 AWWWARDS-GRADE OUTPUT
               </div>
-              <h2 className="text-2xl sm:text-4xl font-extrabold mb-3 text-white">{t.portfolioTitle}</h2>
+              <h2 className="text-2xl sm:text-4xl font-extrabold mb-3 text-white scroll-scale">{t.portfolioTitle}</h2>
               <p className="text-zinc-400 text-xs sm:text-sm">{t.portfolioSub}</p>
             </div>
 
@@ -1541,7 +1615,7 @@
               {filteredPortfolio.map((item) => (
                 <div 
                   key={item.id} 
-                  className="glass-card overflow-hidden flex flex-col group cursor-pointer"
+                  className="glass-card scroll-reveal overflow-hidden flex flex-col group cursor-pointer"
                   onClick={() => setSelectedCaseStudy(item)}
                 >
                   {/* Card Media Preview Frame */}
@@ -1604,7 +1678,7 @@
           </section>
 
           {/* --- STUDIO TEAM & CREATIVE CAPABILITIES HUB --- */}
-          <section id="team" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto w-full scroll-driven">
+          <section id="team" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto w-full">
             
             {/* Section Header */}
             <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
@@ -1612,7 +1686,7 @@
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-emerald animate-ping"></span>
                 <span>{t.teamBadge}</span>
               </div>
-              <h2 className="text-2xl sm:text-4xl font-extrabold mb-3 text-white">{t.teamTitle}</h2>
+              <h2 className="text-2xl sm:text-4xl font-extrabold mb-3 text-white scroll-scale">{t.teamTitle}</h2>
               <p className="text-zinc-400 text-xs sm:text-sm">{t.teamSub}</p>
             </div>
 
@@ -1620,7 +1694,7 @@
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 mb-16">
               
               {/* Studio HQ Real Photography Frame with View Switcher */}
-              <div className="lg:col-span-7 relative rounded-2xl overflow-hidden border border-white/10 group shadow-2xl min-h-[340px] sm:min-h-[420px] flex flex-col justify-between bg-black">
+              <div className="lg:col-span-7 scroll-reveal relative rounded-2xl overflow-hidden border border-white/10 group shadow-2xl min-h-[340px] sm:min-h-[420px] flex flex-col justify-between bg-black">
                 <img 
                   src={studioView === 'dusk' ? './assets/images/studio_hq_dusk.png' : './assets/images/studio_team_lab.jpg'} 
                   alt="SamStudio Istanbul HQ Collaboration Workspace" 
@@ -1668,7 +1742,7 @@
               </div>
 
               {/* Clean Capabilities & Production Standards Grid */}
-              <div className="lg:col-span-5 glass-card p-6 sm:p-7 flex flex-col justify-between border-accent-gold/30 bg-gradient-to-b from-amber-500/5 via-zinc-card/90 to-obsidian">
+              <div className="lg:col-span-5 glass-card scroll-reveal p-6 sm:p-7 flex flex-col justify-between border-accent-gold/30 bg-gradient-to-b from-amber-500/5 via-zinc-card/90 to-obsidian">
                 <div>
                   <div className="mb-5">
                     <span className="text-[10px] font-mono uppercase tracking-wider text-accent-gold-light font-bold block mb-1">
@@ -1733,7 +1807,7 @@
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 {teamMembersData.map((member) => (
-                  <div key={member.id} className="glass-card p-5 flex flex-col justify-between group hover:border-accent-violet/50">
+                  <div key={member.id} className="glass-card scroll-reveal p-5 flex flex-col justify-between group hover:border-accent-violet/50">
                     <div>
                       {/* Avatar & Info */}
                       <div className="flex items-center gap-3 mb-3">
@@ -1776,12 +1850,94 @@
                   </div>
                 ))}
               </div>
+
+              {/* Interactive AI Prompt Engineering Terminal */}
+              <div className="mt-12 sm:mt-16 glass-card scroll-reveal p-5 sm:p-7 rounded-2xl border-accent-violet/30 bg-gradient-to-b from-indigo-500/10 via-zinc-card/90 to-obsidian">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                  <div>
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-accent-violet/20 border border-accent-violet/40 text-accent-violet-glow text-[9px] font-mono mb-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent-violet animate-ping"></span>
+                      <span>{t.promptTerminalBadge}</span>
+                    </div>
+                    <h3 className="text-base sm:text-xl font-bold text-white">{t.promptTerminalTitle}</h3>
+                    <p className="text-zinc-400 text-xs mt-0.5">{t.promptTerminalSub}</p>
+                  </div>
+
+                  <button
+                    onClick={() => {
+                      const cur = aiPromptsData.find(p => p.id === activePromptTab) || aiPromptsData[0];
+                      if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(cur.prompt);
+                      }
+                      setCopiedPrompt(true);
+                      setTimeout(() => setCopiedPrompt(false), 2200);
+                    }}
+                    className={`px-4 py-2.5 rounded-xl font-mono text-xs font-bold transition-all duration-200 flex items-center justify-center gap-2 flex-shrink-0 shadow-lg ${
+                      copiedPrompt 
+                        ? 'bg-emerald-500 text-obsidian shadow-emerald-500/30' 
+                        : 'btn-gold-glow text-obsidian shadow-glow-gold'
+                    }`}
+                  >
+                    <span>{copiedPrompt ? '✓' : '📋'}</span>
+                    <span>{copiedPrompt ? t.copiedPromptBtn : t.copyPromptBtn}</span>
+                  </button>
+                </div>
+
+                {/* Prompt Category Tabs */}
+                <div className="flex items-center gap-2 mb-4 overflow-x-auto no-scrollbar py-1">
+                  {aiPromptsData.map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => setActivePromptTab(tab.id)}
+                      className={`px-3 py-1.5 rounded-lg text-[11px] font-mono whitespace-nowrap transition-all border flex items-center gap-1.5 flex-shrink-0 ${
+                        activePromptTab === tab.id
+                          ? 'bg-accent-violet text-white border-accent-violet-glow font-bold shadow-glow-violet'
+                          : 'bg-obsidian/80 text-zinc-400 border-white/10 hover:border-white/20 hover:text-white'
+                      }`}
+                    >
+                      <span>{tab.label}</span>
+                      <span className="text-[9px] px-1.5 py-0.2 rounded bg-white/10 text-zinc-300">{tab.badge}</span>
+                    </button>
+                  ))}
+                </div>
+
+                {/* Terminal Code Window */}
+                {(() => {
+                  const currentPrompt = aiPromptsData.find(p => p.id === activePromptTab) || aiPromptsData[0];
+                  return (
+                    <div className="rounded-xl overflow-hidden bg-obsidian border border-white/10 font-mono text-xs">
+                      {/* Terminal Top Bar */}
+                      <div className="px-4 py-2 bg-zinc-dark/90 border-b border-white/10 flex items-center justify-between">
+                        <div className="flex items-center gap-1.5">
+                          <span className="w-2.5 h-2.5 rounded-full bg-red-500/80 inline-block"></span>
+                          <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block"></span>
+                          <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block"></span>
+                          <span className="ml-2 text-[10px] text-zinc-400">{currentPrompt.tool} Engine</span>
+                        </div>
+                        <div className="text-[10px] text-accent-gold-light">
+                          {currentPrompt.aspect}
+                        </div>
+                      </div>
+
+                      {/* Terminal Content */}
+                      <div className="p-4 sm:p-5 text-zinc-200 leading-relaxed overflow-x-auto bg-black/40">
+                        <div className="text-zinc-500 text-[10px] mb-2 select-none">
+                          // Production Synthetic Prompt Directive:
+                        </div>
+                        <div className="text-zinc-200 select-all font-sans sm:font-mono text-xs sm:text-[13px]">
+                          {currentPrompt.prompt}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
             </div>
 
           </section>
 
           {/* --- B2B MULTILINGUAL SUPPLIER PORTAL & RFQ ENGINE --- */}
-          <section id="catalog" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto w-full scroll-driven">
+          <section id="catalog" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto w-full">
             
             {/* Section Header */}
             <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
@@ -1789,7 +1945,7 @@
                 <span className="text-accent-gold font-bold">🇹🇷</span>
                 <span>{t.catalogBadge}</span>
               </div>
-              <h2 className="text-2xl sm:text-4xl font-extrabold mb-3 text-white">{t.catalogTitle}</h2>
+              <h2 className="text-2xl sm:text-4xl font-extrabold mb-3 text-white scroll-scale">{t.catalogTitle}</h2>
               <p className="text-zinc-400 text-xs sm:text-sm">{t.catalogSub}</p>
             </div>
 
@@ -1798,7 +1954,7 @@
               {catalogItemsData.map((item) => (
                 <div 
                   key={item.id}
-                  className="glass-card overflow-hidden flex flex-col justify-between border-amber-500/20 group bg-gradient-to-b from-amber-500/5 via-zinc-card/60 to-obsidian"
+                  className="glass-card scroll-reveal overflow-hidden flex flex-col justify-between border-amber-500/20 group bg-gradient-to-b from-amber-500/5 via-zinc-card/60 to-obsidian"
                 >
                   <div>
                     {/* Media Preview Frame */}
@@ -1872,7 +2028,7 @@
             </div>
 
             {/* Custom Sourcing Callout Bar */}
-            <div className="glass-card p-6 sm:p-8 rounded-2xl border-amber-500/30 flex flex-col md:flex-row items-center justify-between gap-5 bg-gradient-to-r from-amber-500/10 via-zinc-card to-obsidian">
+            <div className="glass-card scroll-reveal p-6 sm:p-8 rounded-2xl border-amber-500/30 flex flex-col md:flex-row items-center justify-between gap-5 bg-gradient-to-r from-amber-500/10 via-zinc-card to-obsidian">
               <div className="text-center md:text-left">
                 <div className="flex items-center justify-center md:justify-start gap-1.5 mb-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent-emerald animate-ping"></span>
@@ -1896,9 +2052,9 @@
           </section>
 
           {/* --- CONTACT & STRATEGY MEETING SECTION --- */}
-          <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-4xl mx-auto w-full scroll-driven">
-            <div className="glass-card p-6 sm:p-10 md:p-12 text-center relative overflow-hidden border-accent-gold/30 bg-gradient-to-b from-amber-500/10 via-zinc-card to-obsidian">
-              <h2 className="text-2xl sm:text-4xl font-extrabold mb-3 text-white">
+          <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 md:px-8 max-w-4xl mx-auto w-full">
+            <div className="glass-card scroll-reveal p-6 sm:p-10 md:p-12 text-center relative overflow-hidden border-accent-gold/30 bg-gradient-to-b from-amber-500/10 via-zinc-card to-obsidian">
+              <h2 className="text-2xl sm:text-4xl font-extrabold mb-3 text-white scroll-scale">
                 Ready to Elevate Your Global Presence?
               </h2>
               <p className="text-zinc-400 text-xs sm:text-sm max-w-xl mx-auto mb-8">
